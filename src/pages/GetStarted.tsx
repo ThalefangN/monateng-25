@@ -1,8 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import { useToast } from "@/hooks/use-toast";
 
 const GetStarted = () => {
+  const isOnline = useOnlineStatus();
+  const { toast } = useToast();
+
+  const handleAction = () => {
+    if (!isOnline) {
+      toast({
+        title: "You're offline",
+        description: "Please connect to the internet to proceed.",
+        variant: "destructive",
+      });
+      return;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
       <motion.div
@@ -11,6 +27,14 @@ const GetStarted = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md space-y-8 text-center"
       >
+        {!isOnline && (
+          <div className="bg-destructive/10 text-destructive p-4 rounded-lg mb-4">
+            <p className="text-sm font-medium">
+              You are currently offline. Some features may be limited.
+            </p>
+          </div>
+        )}
+
         <div className="space-y-4">
           <h1 className="text-4xl font-bold tracking-tight">Mookgweetsi</h1>
           <p className="text-muted-foreground">
@@ -27,10 +51,21 @@ const GetStarted = () => {
         </div>
 
         <div className="space-y-4">
-          <Button asChild className="w-full" size="lg">
+          <Button 
+            asChild 
+            className={`w-full ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            size="lg"
+            onClick={handleAction}
+          >
             <Link to="/signup">Sign Up</Link>
           </Button>
-          <Button asChild variant="outline" className="w-full" size="lg">
+          <Button 
+            asChild 
+            variant="outline" 
+            className={`w-full ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            size="lg"
+            onClick={handleAction}
+          >
             <Link to="/signin">Sign In</Link>
           </Button>
         </div>

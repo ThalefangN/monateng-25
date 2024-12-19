@@ -7,14 +7,28 @@ import { motion } from "framer-motion";
 import { User, Mail, Lock, Phone, Facebook } from "lucide-react";
 import PhoneInput from "@/components/PhoneInput";
 import { useState } from "react";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import { useToast } from "@/hooks/use-toast";
 
 const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();
+  const isOnline = useOnlineStatus();
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isOnline) {
+      toast({
+        title: "You're offline",
+        description: "Please connect to the internet to sign up.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     navigate("/home");
   };
 
@@ -26,6 +40,14 @@ const SignUp = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md space-y-8"
       >
+        {!isOnline && (
+          <div className="bg-destructive/10 text-destructive p-4 rounded-lg mb-4">
+            <p className="text-sm font-medium">
+              You are currently offline. Please connect to the internet to sign up.
+            </p>
+          </div>
+        )}
+
         <div className="text-center">
           <h1 className="text-2xl font-bold">Create Account</h1>
           <p className="text-muted-foreground mt-2">Sign up for Mookgweetsi</p>
@@ -73,7 +95,12 @@ const SignUp = () => {
             </div>
           </div>
 
-          <Button type="submit" className="w-full" size="lg" disabled={!agreed}>
+          <Button 
+            type="submit" 
+            className={`w-full ${!isOnline ? "opacity-50" : ""}`} 
+            size="lg" 
+            disabled={!agreed || !isOnline}
+          >
             Sign Up
           </Button>
 
@@ -87,11 +114,37 @@ const SignUp = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" type="button" className="w-full">
+            <Button 
+              variant="outline" 
+              type="button" 
+              className={`w-full ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+              onClick={() => {
+                if (!isOnline) {
+                  toast({
+                    title: "You're offline",
+                    description: "Please connect to the internet to continue with Facebook.",
+                    variant: "destructive",
+                  });
+                }
+              }}
+            >
               <Facebook className="mr-2 h-4 w-4" />
               Facebook
             </Button>
-            <Button variant="outline" type="button" className="w-full">
+            <Button 
+              variant="outline" 
+              type="button" 
+              className={`w-full ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+              onClick={() => {
+                if (!isOnline) {
+                  toast({
+                    title: "You're offline",
+                    description: "Please connect to the internet to continue with Google.",
+                    variant: "destructive",
+                  });
+                }
+              }}
+            >
               <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"

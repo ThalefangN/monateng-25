@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Calculator, Calendar, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -14,11 +14,13 @@ import {
 } from "@/components/ui/dialog";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const RoadTax = () => {
   const navigate = useNavigate();
   const isOnline = useOnlineStatus();
   const { toast } = useToast();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const taxServices = [
     {
@@ -26,7 +28,12 @@ const RoadTax = () => {
       description: "Calculate your vehicle's road tax amount",
       icon: Calculator,
       content: (
-        <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="space-y-4"
+        >
           <h3 className="text-lg font-semibold">Road Tax Calculator</h3>
           <form className="space-y-4">
             <div>
@@ -44,7 +51,7 @@ const RoadTax = () => {
             </div>
             <Button className="w-full">Calculate Tax</Button>
           </form>
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -52,7 +59,12 @@ const RoadTax = () => {
       description: "Make your road tax payment online",
       icon: Receipt,
       content: (
-        <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="space-y-4"
+        >
           <h3 className="text-lg font-semibold">Road Tax Payment</h3>
           <form className="space-y-4">
             <div>
@@ -65,7 +77,7 @@ const RoadTax = () => {
             </div>
             <Button className="w-full">Proceed to Payment</Button>
           </form>
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -73,21 +85,32 @@ const RoadTax = () => {
       description: "View your past road tax payments",
       icon: Calendar,
       content: (
-        <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="space-y-4"
+        >
           <h3 className="text-lg font-semibold">Payment History</h3>
           <div className="space-y-2">
-            <div className="p-3 border rounded">
+            <motion.div 
+              className="p-3 border rounded"
+              whileHover={{ scale: 1.02 }}
+            >
               <p className="font-medium">Payment #12345</p>
               <p className="text-sm text-gray-600">Date: 01/01/2024</p>
-              <p className="text-sm text-gray-600">Amount: $150</p>
-            </div>
-            <div className="p-3 border rounded">
+              <p className="text-sm text-gray-600">Amount: BWP 1,500</p>
+            </motion.div>
+            <motion.div 
+              className="p-3 border rounded"
+              whileHover={{ scale: 1.02 }}
+            >
               <p className="font-medium">Payment #12344</p>
               <p className="text-sm text-gray-600">Date: 01/01/2023</p>
-              <p className="text-sm text-gray-600">Amount: $150</p>
-            </div>
+              <p className="text-sm text-gray-600">Amount: BWP 1,500</p>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       ),
     },
   ];
@@ -101,6 +124,7 @@ const RoadTax = () => {
       });
       return;
     }
+    setIsDialogOpen(true);
   };
 
   return (
@@ -117,7 +141,11 @@ const RoadTax = () => {
           <h1 className="text-2xl font-bold">Road Tax Payments</h1>
         </motion.div>
 
-        <div className="bg-[#1EAEDB]/10 rounded-lg p-4 mb-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-[#1EAEDB]/10 rounded-lg p-4 mb-6"
+        >
           <h2 className="text-lg font-semibold mb-2">Tax Payment Guide</h2>
           <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
             <li>Tax rates vary by vehicle type and weight</li>
@@ -125,7 +153,7 @@ const RoadTax = () => {
             <li>Late payment penalties apply</li>
             <li>Keep proof of payment for verification</li>
           </ul>
-        </div>
+        </motion.div>
 
         <div className="grid gap-4">
           {taxServices.map((service, index) => (
@@ -135,7 +163,7 @@ const RoadTax = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Dialog>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Card 
                     className={`cursor-pointer hover:bg-accent transition-colors ${
@@ -154,14 +182,18 @@ const RoadTax = () => {
                     </CardHeader>
                   </Card>
                 </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>{service.title}</DialogTitle>
-                    <DialogDescription>
-                      {service.content}
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
+                <AnimatePresence>
+                  {isDialogOpen && (
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle>{service.title}</DialogTitle>
+                        <DialogDescription>
+                          {service.content}
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  )}
+                </AnimatePresence>
               </Dialog>
             </motion.div>
           ))}

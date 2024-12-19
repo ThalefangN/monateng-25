@@ -4,12 +4,26 @@ import { Label } from "@/components/ui/label";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Lock, Facebook } from "lucide-react";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import { useToast } from "@/hooks/use-toast";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const isOnline = useOnlineStatus();
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isOnline) {
+      toast({
+        title: "You're offline",
+        description: "Please connect to the internet to sign in.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     navigate("/home");
   };
 
@@ -21,6 +35,14 @@ const SignIn = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md space-y-8"
       >
+        {!isOnline && (
+          <div className="bg-destructive/10 text-destructive p-4 rounded-lg mb-4">
+            <p className="text-sm font-medium">
+              You are currently offline. Please connect to the internet to sign in.
+            </p>
+          </div>
+        )}
+
         <div className="text-center">
           <h1 className="text-2xl font-bold">Welcome Back</h1>
           <p className="text-muted-foreground mt-2">Sign in to your account</p>

@@ -49,17 +49,17 @@ const SignUp = () => {
         )}
 
         <div className="text-center">
-          <h1 className="text-2xl font-bold">Create Account</h1>
-          <p className="text-muted-foreground mt-2">Sign up for Mookgweetsi</p>
+          <h1 className="text-2xl font-bold">Join BotseduLearn</h1>
+          <p className="text-muted-foreground mt-2">Start your learning journey today</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="username">Username</Label>
+              <Label htmlFor="username">Student Name</Label>
               <div className="relative">
                 <User className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="username" placeholder="Enter username" className="pl-10" />
+                <Input id="username" placeholder="Enter your full name" className="pl-10" />
               </div>
             </div>
 
@@ -67,7 +67,7 @@ const SignUp = () => {
               <Label htmlFor="email">Email</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="email" type="email" placeholder="Enter email" className="pl-10" />
+                <Input id="email" type="email" placeholder="Enter your email" className="pl-10" />
               </div>
             </div>
 
@@ -75,7 +75,7 @@ const SignUp = () => {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="password" type="password" placeholder="Create password" className="pl-10" />
+                <Input id="password" type="password" placeholder="Create a secure password" className="pl-10" />
               </div>
             </div>
 
@@ -90,7 +90,7 @@ const SignUp = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I agree to the terms and conditions
+                I agree to BotseduLearn's terms of service and privacy policy
               </label>
             </div>
           </div>
@@ -101,7 +101,7 @@ const SignUp = () => {
             size="lg" 
             disabled={!agreed || !isOnline}
           >
-            Sign Up
+            Create Student Account
           </Button>
 
           <div className="relative">
@@ -169,7 +169,7 @@ const SignUp = () => {
           </div>
 
           <p className="text-center text-sm text-muted-foreground">
-            Already have an account?{" "}
+            Already a student?{" "}
             <Link to="/signin" className="font-medium text-primary hover:underline">
               Sign in
             </Link>

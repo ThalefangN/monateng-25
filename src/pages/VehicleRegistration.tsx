@@ -25,24 +25,24 @@ const VehicleRegistration = () => {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Library className="h-6 w-6" />
-            Digital Library
+            PSLE Resources
           </h1>
           <p className="text-muted-foreground mt-2">
-            Access our extensive collection of digital learning resources
+            Primary School Leaving Examination study materials
           </p>
         </div>
 
         <div className="grid gap-6">
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Available Resources</h2>
+            <h2 className="text-xl font-semibold mb-4">Core Subjects</h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Library className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">E-Books Collection</h3>
-                  <p className="text-sm text-muted-foreground">Access thousands of academic e-books</p>
+                  <h3 className="font-medium">Mathematics</h3>
+                  <p className="text-sm text-muted-foreground">Basic mathematics and problem-solving skills</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -50,8 +50,8 @@ const VehicleRegistration = () => {
                   <Library className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Academic Journals</h3>
-                  <p className="text-sm text-muted-foreground">Browse peer-reviewed research papers</p>
+                  <h3 className="font-medium">English</h3>
+                  <p className="text-sm text-muted-foreground">Reading, writing, and basic grammar</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -59,22 +59,31 @@ const VehicleRegistration = () => {
                   <Library className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Learning Materials</h3>
-                  <p className="text-sm text-muted-foreground">Download study guides and resources</p>
+                  <h3 className="font-medium">Science</h3>
+                  <p className="text-sm text-muted-foreground">Basic science concepts and experiments</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Library className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Agriculture</h3>
+                  <p className="text-sm text-muted-foreground">Introduction to farming and agriculture</p>
                 </div>
               </li>
             </ul>
           </div>
 
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Library Features</h2>
+            <h2 className="text-xl font-semibold mb-4">Learning Resources</h2>
             <ul className="space-y-2 text-sm">
-              <li>✓ 24/7 online access</li>
-              <li>✓ Advanced search functionality</li>
-              <li>✓ Multiple format support</li>
-              <li>✓ Offline reading capability</li>
-              <li>✓ Citation tools</li>
-              <li>✓ Personal library organization</li>
+              <li>✓ Interactive learning games</li>
+              <li>✓ Animated video lessons</li>
+              <li>✓ Practice worksheets</li>
+              <li>✓ Parent guidance materials</li>
+              <li>✓ Progress reports</li>
+              <li>✓ Fun educational activities</li>
             </ul>
           </div>
         </div>

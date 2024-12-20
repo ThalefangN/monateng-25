@@ -2,9 +2,21 @@ import { motion } from "framer-motion";
 import { MessageSquare, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 const ReportIssue = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Support request submitted",
+      description: "Our team will get back to you within 24 hours.",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background p-4">
@@ -28,54 +40,57 @@ const ReportIssue = () => {
             Student Support
           </h1>
           <p className="text-muted-foreground mt-2">
-            Get help from our tutors and academic support team
+            Get help with your studies or technical issues
           </p>
         </div>
 
         <div className="grid gap-6">
           <div className="bg-card rounded-lg p-6 shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">Contact Support</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-sm font-medium mb-1 block">Subject</label>
+                <Input placeholder="What do you need help with?" />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1 block">Description</label>
+                <Textarea 
+                  placeholder="Describe your issue in detail" 
+                  className="min-h-[100px]"
+                />
+              </div>
+              <Button type="submit" className="w-full">Submit Request</Button>
+            </form>
+          </div>
+
+          <div className="bg-card rounded-lg p-6 shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Support Services</h2>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <MessageSquare className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Academic Advising</h3>
-                  <p className="text-sm text-muted-foreground">Get guidance on your academic journey</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <MessageSquare className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Technical Support</h3>
-                  <p className="text-sm text-muted-foreground">Resolve platform-related issues</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <MessageSquare className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Tutoring Services</h3>
-                  <p className="text-sm text-muted-foreground">One-on-one help with course content</p>
-                </div>
-              </li>
+            <ul className="space-y-2 text-sm">
+              <li>✓ 24/7 Technical Support</li>
+              <li>✓ Academic Guidance</li>
+              <li>✓ Study Material Access Help</li>
+              <li>✓ Exam Preparation Support</li>
+              <li>✓ Course Selection Assistance</li>
+              <li>✓ Learning Resources Help</li>
             </ul>
           </div>
 
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Support Features</h2>
-            <ul className="space-y-2 text-sm">
-              <li>✓ 24/7 chat support</li>
-              <li>✓ Video consultations</li>
-              <li>✓ Email support</li>
-              <li>✓ Knowledge base access</li>
-              <li>✓ Community forums</li>
-              <li>✓ Scheduled appointments</li>
-            </ul>
+            <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+            <div className="grid gap-2">
+              <Button variant="outline" className="justify-start">
+                <MessageSquare className="h-4 w-4 mr-2" />
+                Live Chat with Tutor
+              </Button>
+              <Button variant="outline" className="justify-start">
+                <MessageSquare className="h-4 w-4 mr-2" />
+                FAQs
+              </Button>
+              <Button variant="outline" className="justify-start">
+                <MessageSquare className="h-4 w-4 mr-2" />
+                Study Resources
+              </Button>
+            </div>
           </div>
         </div>
       </motion.div>

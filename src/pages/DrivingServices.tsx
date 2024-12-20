@@ -25,24 +25,24 @@ const DrivingServices = () => {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <BookOpen className="h-6 w-6" />
-            Online Courses
+            BGCSE Courses
           </h1>
           <p className="text-muted-foreground mt-2">
-            Access our comprehensive collection of online courses
+            Access our comprehensive BGCSE preparation courses
           </p>
         </div>
 
         <div className="grid gap-6">
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Available Courses</h2>
+            <h2 className="text-xl font-semibold mb-4">Core Subjects</h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <BookOpen className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Introduction to Computer Science</h3>
-                  <p className="text-sm text-muted-foreground">Learn the basics of programming and computer science</p>
+                  <h3 className="font-medium">Mathematics</h3>
+                  <p className="text-sm text-muted-foreground">Core mathematics including algebra, geometry, and statistics</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -50,8 +50,8 @@ const DrivingServices = () => {
                   <BookOpen className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Business Administration</h3>
-                  <p className="text-sm text-muted-foreground">Master the fundamentals of business management</p>
+                  <h3 className="font-medium">English Language</h3>
+                  <p className="text-sm text-muted-foreground">Comprehensive English language and literature studies</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
@@ -59,8 +59,8 @@ const DrivingServices = () => {
                   <BookOpen className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Digital Marketing</h3>
-                  <p className="text-sm text-muted-foreground">Learn modern marketing strategies and techniques</p>
+                  <h3 className="font-medium">Science (Double Award)</h3>
+                  <p className="text-sm text-muted-foreground">Biology, Chemistry, and Physics combined</p>
                 </div>
               </li>
             </ul>
@@ -69,12 +69,12 @@ const DrivingServices = () => {
           <div className="bg-card rounded-lg p-6 shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Course Features</h2>
             <ul className="space-y-2 text-sm">
-              <li>✓ Self-paced learning</li>
-              <li>✓ Video lectures and tutorials</li>
-              <li>✓ Interactive assignments</li>
-              <li>✓ Progress tracking</li>
-              <li>✓ Certificate upon completion</li>
-              <li>✓ 24/7 access to materials</li>
+              <li>✓ Comprehensive study materials</li>
+              <li>✓ Past examination papers</li>
+              <li>✓ Video tutorials</li>
+              <li>✓ Practice exercises</li>
+              <li>✓ Mock examinations</li>
+              <li>✓ One-on-one tutoring available</li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Car, CreditCard, Truck, AlertTriangle, QrCode } from "lucide-react";
+import { ArrowLeft, BookOpen, GraduationCap, Library, Award, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,34 +10,28 @@ const Services = () => {
 
   const services = [
     {
-      title: "Driving License Services",
-      description: "Learn more about driving license exam bookings and payments",
-      icon: Car,
+      title: "Online Courses",
+      description: "Access our wide range of online courses and learning materials",
+      icon: BookOpen,
       path: "/driving-services"
     },
     {
-      title: "Permit & License Payments",
-      description: "Pay for driving licenses and permits with ease",
-      icon: CreditCard,
+      title: "Academic Programs",
+      description: "Browse and enroll in academic programs and certifications",
+      icon: GraduationCap,
       path: "/permits"
     },
     {
-      title: "Vehicle Registration",
-      description: "Register or renew your vehicle in a few simple steps",
-      icon: Truck,
+      title: "Digital Library",
+      description: "Access our extensive collection of digital learning resources",
+      icon: Library,
       path: "/vehicle-registration"
     },
     {
-      title: "Report an Issue",
-      description: "Report issues like road accidents, traffic violations, etc",
-      icon: AlertTriangle,
+      title: "Student Support",
+      description: "Get help from our tutors and academic support team",
+      icon: MessageSquare,
       path: "/report-issue"
-    },
-    {
-      title: "Digital Identity / QR Code",
-      description: "Access your transport-related documents and digital ID",
-      icon: QrCode,
-      path: "/digital-id"
     }
   ];
 
@@ -52,7 +46,7 @@ const Services = () => {
           <Button variant="ghost" size="icon" onClick={() => navigate("/home")}>
             <ArrowLeft className="h-6 w-6" />
           </Button>
-          <h1 className="text-2xl font-bold">Services</h1>
+          <h1 className="text-2xl font-bold">Learning Services</h1>
         </motion.div>
 
         <div className="space-y-4">

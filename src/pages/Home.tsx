@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, Car, CreditCard, Truck, MapPin, AlertTriangle, QrCode, HomeIcon, Settings, Bell, User } from "lucide-react";
+import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode, HomeIcon, Settings, Bell, User } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";
@@ -11,38 +11,38 @@ const Home = () => {
   
   const services = [
     {
-      title: "Driving License Services",
-      description: "Learn more about driving license exam bookings and payments",
-      icon: Car,
-      path: "/driving-services"
+      title: "Online Courses",
+      description: "Access our wide range of online courses and learning materials",
+      icon: BookOpen,
+      path: "/driving-services" // keeping existing routes but changing content
     },
     {
-      title: "Permit & License Payments",
-      description: "Pay for driving licenses and permits with ease",
-      icon: CreditCard,
+      title: "Academic Programs",
+      description: "Browse and enroll in academic programs and certifications",
+      icon: GraduationCap,
       path: "/permits"
     },
     {
-      title: "Vehicle Registration",
-      description: "Register or renew your vehicle in a few simple steps",
-      icon: Truck,
+      title: "Digital Library",
+      description: "Access our extensive collection of digital learning resources",
+      icon: Library,
       path: "/vehicle-registration"
     },
     {
-      title: "Road Tax Payments",
-      description: "Pay road taxes and fees online quickly and easily",
-      icon: MapPin,
+      title: "Assessments & Exams",
+      description: "Take online assessments and track your progress",
+      icon: Award,
       path: "/road-tax"
     },
     {
-      title: "Report an Issue",
-      description: "Report issues like road accidents, traffic violations, etc",
-      icon: AlertTriangle,
+      title: "Student Support",
+      description: "Get help from our tutors and academic support team",
+      icon: MessageSquare,
       path: "/report-issue"
     },
     {
-      title: "Digital Identity / QR Code",
-      description: "Access your transport-related documents and digital ID",
+      title: "Student ID / Portal",
+      description: "Access your student profile and digital credentials",
       icon: QrCode,
       path: "/digital-id"
     },
@@ -58,8 +58,8 @@ const Home = () => {
         >
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">Welcome, User!</h1>
-              <p className="text-muted-foreground">What would you like to do today?</p>
+              <h1 className="text-2xl font-bold">Welcome to BotseduLearn!</h1>
+              <p className="text-muted-foreground">Discover your learning journey today</p>
             </div>
             <Button size="icon" variant="ghost" onClick={() => navigate("/profile")}>
               <User className="h-6 w-6" />
@@ -69,7 +69,7 @@ const Home = () => {
           <div className="rounded-xl overflow-hidden shadow-lg h-48 mb-6">
             <img 
               src="/lovable-uploads/18a8902a-f4eb-4b86-8c45-c8914ecb854c.png"
-              alt="Botswana Flag with Confetti"
+              alt="BotseduLearn Banner"
               className="w-full h-full object-cover"
             />
           </div>
@@ -77,7 +77,7 @@ const Home = () => {
 
         <div className="relative">
           <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-          <Input className="pl-10" placeholder="Search for a service..." />
+          <Input className="pl-10" placeholder="Search courses, programs..." />
         </div>
 
         <div className="grid gap-4">

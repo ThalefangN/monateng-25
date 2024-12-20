@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, User, Mail, Phone, Shield, LogOut, ChevronRight } from "lucide-react";
+import { ArrowLeft, User, Mail, Phone, Shield, LogOut, ChevronRight, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,9 +10,9 @@ const Profile = () => {
 
   const menuItems = [
     {
-      title: "Personal Information",
+      title: "Academic Profile",
       icon: User,
-      onClick: () => console.log("Navigate to personal info")
+      onClick: () => console.log("Navigate to academic profile")
     },
     {
       title: "Security Settings",
@@ -58,7 +58,7 @@ const Profile = () => {
           </motion.div>
           <div className="text-center">
             <h2 className="text-xl font-semibold">Tlhalefang Ntshilane</h2>
-            <p className="text-muted-foreground">ID: 123456789</p>
+            <p className="text-muted-foreground">Student ID: BEL123456</p>
           </div>
         </motion.div>
 
@@ -69,16 +69,16 @@ const Profile = () => {
                 <Mail className="h-5 w-5 text-muted-foreground" />
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">tlhalefang.ntshilane@example.com</p>
+                  <p className="font-medium">tlhalefang.ntshilane@botsedu.ac.bw</p>
                 </div>
               </div>
             </Card>
             <Card className="p-4">
               <div className="flex items-center space-x-4">
-                <Phone className="h-5 w-5 text-muted-foreground" />
+                <GraduationCap className="h-5 w-5 text-muted-foreground" />
                 <div className="flex-1">
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium">+267 71234567</p>
+                  <p className="text-sm text-muted-foreground">Program</p>
+                  <p className="font-medium">Bachelor of Computer Science</p>
                 </div>
               </div>
             </Card>

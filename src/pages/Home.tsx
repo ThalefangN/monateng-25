@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode } from "lucide-react";
+import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode, User } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode, HomeIcon, Settings, Bell, User } from "lucide-react";
+import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const Home = () => {
       title: "Online Courses",
       description: "Access our wide range of online courses and learning materials",
       icon: BookOpen,
-      path: "/driving-services" // keeping existing routes but changing content
+      path: "/driving-services"
     },
     {
       title: "Academic Programs",

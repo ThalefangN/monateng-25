@@ -36,16 +36,16 @@ const GetStarted = () => {
         )}
 
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">Mookgweetsi</h1>
+          <h1 className="text-4xl font-bold tracking-tight">BotseduLearn</h1>
           <p className="text-muted-foreground">
-            Your one-stop transport services solution in Botswana
+            Your gateway to quality education in Botswana
           </p>
         </div>
         
         <div className="relative h-64 w-full rounded-2xl overflow-hidden">
           <img
-            src="/lovable-uploads/b1fdcda0-68c0-4b78-9a71-bbebb1ab0560.png"
-            alt="Botswana Flag"
+            src="/lovable-uploads/18a8902a-f4eb-4b86-8c45-c8914ecb854c.png"
+            alt="BotseduLearn Banner"
             className="object-cover w-full h-full"
           />
         </div>
@@ -57,7 +57,7 @@ const GetStarted = () => {
             size="lg"
             onClick={handleAction}
           >
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup">Create Student Account</Link>
           </Button>
           <Button 
             asChild 
@@ -66,7 +66,7 @@ const GetStarted = () => {
             size="lg"
             onClick={handleAction}
           >
-            <Link to="/signin">Sign In</Link>
+            <Link to="/signin">Sign In to Learn</Link>
           </Button>
         </div>
 

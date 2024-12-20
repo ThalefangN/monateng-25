@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, ArrowLeft, BookOpen } from "lucide-react";
+import { Award, ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -25,78 +25,64 @@ const RoadTax = () => {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Award className="h-6 w-6" />
-            Course Registration
+            Assessments & Exams
           </h1>
           <p className="text-muted-foreground mt-2">
-            Register for your preferred courses and start learning
+            Track your examination schedule and access past papers
           </p>
         </div>
 
-        <div className="grid gap-6">
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Available Courses</h2>
-            <div className="space-y-4">
-              <div className="border rounded-lg p-4 hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" />
-                    Mathematics
-                  </h3>
-                  <span className="text-sm bg-primary/10 text-primary px-2 py-1 rounded">BGCSE</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">Comprehensive mathematics course covering algebra, geometry, and statistics</p>
-                <Button variant="outline" className="w-full">Register Now</Button>
-              </div>
-
-              <div className="border rounded-lg p-4 hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" />
-                    English Language
-                  </h3>
-                  <span className="text-sm bg-primary/10 text-primary px-2 py-1 rounded">BGCSE</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">Complete English language and literature course</p>
-                <Button variant="outline" className="w-full">Register Now</Button>
-              </div>
-
-              <div className="border rounded-lg p-4 hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" />
-                    Science
-                  </h3>
-                  <span className="text-sm bg-primary/10 text-primary px-2 py-1 rounded">BGCSE</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">Combined science course covering biology, chemistry, and physics</p>
-                <Button variant="outline" className="w-full">Register Now</Button>
-              </div>
-
-              <div className="border rounded-lg p-4 hover:bg-accent transition-colors cursor-pointer">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" />
-                    Agriculture
-                  </h3>
-                  <span className="text-sm bg-primary/10 text-primary px-2 py-1 rounded">BGCSE</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">Comprehensive agriculture studies with practical components</p>
-                <Button variant="outline" className="w-full">Register Now</Button>
-              </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-card rounded-lg p-6 shadow-sm cursor-pointer"
+            onClick={() => navigate("/current-exams")}
+          >
+            <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+              <Calendar className="h-6 w-6 text-primary" />
             </div>
-          </div>
-
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Registration Benefits</h2>
+            <h2 className="text-xl font-semibold mb-2">Current Exams</h2>
+            <p className="text-sm text-muted-foreground mb-4">View your ongoing examinations and submissions</p>
             <ul className="space-y-2 text-sm">
-              <li>✓ Access to all course materials</li>
-              <li>✓ Live online classes</li>
-              <li>✓ Practice tests and assignments</li>
-              <li>✓ Personal tutor support</li>
-              <li>✓ Progress tracking dashboard</li>
-              <li>✓ Mobile learning access</li>
+              <li>• Mathematics Mock Test (Due: Today)</li>
+              <li>• English Essay (Due: Tomorrow)</li>
+              <li>• Science Quiz (Due: In 2 days)</li>
             </ul>
-          </div>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-card rounded-lg p-6 shadow-sm cursor-pointer"
+            onClick={() => navigate("/upcoming-exams")}
+          >
+            <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+              <Calendar className="h-6 w-6 text-primary" />
+            </div>
+            <h2 className="text-xl font-semibold mb-2">Upcoming Exams</h2>
+            <p className="text-sm text-muted-foreground mb-4">Schedule of your future examinations</p>
+            <ul className="space-y-2 text-sm">
+              <li>• BGCSE Mathematics (In 2 weeks)</li>
+              <li>• JCE English Final (In 3 weeks)</li>
+              <li>• PSLE Science (Next month)</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-card rounded-lg p-6 shadow-sm cursor-pointer"
+            onClick={() => navigate("/past-exams")}
+          >
+            <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+              <Calendar className="h-6 w-6 text-primary" />
+            </div>
+            <h2 className="text-xl font-semibold mb-2">Past Exams</h2>
+            <p className="text-sm text-muted-foreground mb-4">Access previous exam papers and results</p>
+            <ul className="space-y-2 text-sm">
+              <li>• 2023 Past Papers</li>
+              <li>• 2022 Past Papers</li>
+              <li>• 2021 Past Papers</li>
+            </ul>
+          </motion.div>
         </div>
       </motion.div>
     </div>

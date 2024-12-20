@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Library, ArrowLeft } from "lucide-react";
+import { Library, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const VehicleRegistration = () => {
-  const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   return (
     <div className="min-h-screen bg-background p-4">
@@ -13,78 +14,34 @@ const VehicleRegistration = () => {
         animate={{ opacity: 1, y: 0 }}
         className="space-y-6"
       >
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => navigate(-1)}
-          className="mb-4"
-        >
-          <ArrowLeft className="h-6 w-6" />
-        </Button>
-
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <Library className="h-6 w-6" />
-            PSLE Resources
+            AI Smart Tutor
           </h1>
           <p className="text-muted-foreground mt-2">
-            Primary School Leaving Examination study materials
+            Get instant help with your studies
           </p>
         </div>
 
-        <div className="grid gap-6">
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Core Subjects</h2>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Library className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Mathematics</h3>
-                  <p className="text-sm text-muted-foreground">Basic mathematics and problem-solving skills</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Library className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">English</h3>
-                  <p className="text-sm text-muted-foreground">Reading, writing, and basic grammar</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Library className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Science</h3>
-                  <p className="text-sm text-muted-foreground">Basic science concepts and experiments</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Library className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Agriculture</h3>
-                  <p className="text-sm text-muted-foreground">Introduction to farming and agriculture</p>
-                </div>
-              </li>
-            </ul>
+        <div className="bg-card rounded-lg p-6 shadow-sm h-[calc(100vh-250px)] flex flex-col">
+          <div className="flex-1 overflow-y-auto mb-4 space-y-4">
+            {/* Chat messages would be mapped here */}
+            <div className="bg-accent p-3 rounded-lg max-w-[80%]">
+              <p className="text-sm">Hello! I'm your AI tutor. How can I help you with your studies today?</p>
+            </div>
           </div>
 
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Learning Resources</h2>
-            <ul className="space-y-2 text-sm">
-              <li>✓ Interactive learning games</li>
-              <li>✓ Animated video lessons</li>
-              <li>✓ Practice worksheets</li>
-              <li>✓ Parent guidance materials</li>
-              <li>✓ Progress reports</li>
-              <li>✓ Fun educational activities</li>
-            </ul>
+          <div className="flex gap-2">
+            <Input
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Ask me anything about your studies..."
+              className="flex-1"
+            />
+            <Button className="flex items-center gap-2" size="icon">
+              <Send className="h-5 w-5" />
+            </Button>
           </div>
         </div>
       </motion.div>

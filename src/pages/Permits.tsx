@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, ArrowLeft } from "lucide-react";
+import { GraduationCap, ArrowLeft, BookOpen, Award, Library } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -25,56 +25,92 @@ const Permits = () => {
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <GraduationCap className="h-6 w-6" />
-            JCE Programs
+            Academic Programs
           </h1>
           <p className="text-muted-foreground mt-2">
-            Junior Certificate Examination preparation courses
+            Explore our comprehensive educational programs
           </p>
         </div>
 
         <div className="grid gap-6">
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Available Subjects</h2>
+            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              BGCSE Program
+            </h2>
             <ul className="space-y-4">
               <li className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
-                  <GraduationCap className="h-5 w-5 text-primary" />
+                  <Award className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Mathematics</h3>
-                  <p className="text-sm text-muted-foreground">Basic algebra, geometry, and arithmetic</p>
+                  <h3 className="font-medium">Core Subjects</h3>
+                  <p className="text-sm text-muted-foreground">Mathematics, English, Science, Agriculture</p>
                 </div>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
-                  <GraduationCap className="h-5 w-5 text-primary" />
+                  <Library className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium">Integrated Science</h3>
-                  <p className="text-sm text-muted-foreground">Introduction to biology, chemistry, and physics</p>
-                </div>
-              </li>
-              <li className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <GraduationCap className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium">English Language</h3>
-                  <p className="text-sm text-muted-foreground">Grammar, comprehension, and writing skills</p>
+                  <h3 className="font-medium">Study Resources</h3>
+                  <p className="text-sm text-muted-foreground">Past papers, Video tutorials, Study guides</p>
                 </div>
               </li>
             </ul>
           </div>
 
           <div className="bg-card rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4">Program Benefits</h2>
-            <ul className="space-y-2 text-sm">
-              <li>✓ Structured learning path</li>
-              <li>✓ Interactive learning materials</li>
-              <li>✓ Regular assessments</li>
-              <li>✓ Progress tracking</li>
-              <li>✓ Study groups</li>
-              <li>✓ Expert guidance</li>
+            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              JCE Program
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Award className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Core Subjects</h3>
+                  <p className="text-sm text-muted-foreground">Basic Mathematics, English, Integrated Science</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Library className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Learning Materials</h3>
+                  <p className="text-sm text-muted-foreground">Interactive content, Practice tests, Study notes</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-card rounded-lg p-6 shadow-sm">
+            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              PSLE Program
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Award className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Core Subjects</h3>
+                  <p className="text-sm text-muted-foreground">Mathematics, English, Science, Setswana</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Library className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium">Learning Tools</h3>
+                  <p className="text-sm text-muted-foreground">Educational games, Visual aids, Practice exercises</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

@@ -56,13 +56,13 @@ const Profile = () => {
             />
           </motion.div>
           <div className="text-center">
-            <h2 className="text-xl font-semibold">John Doe</h2>
+            <h2 className="text-xl font-semibold">Kgosi Kgafela</h2>
             <p className="text-muted-foreground">Member since 2024</p>
           </div>
 
           <div className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316] p-6 rounded-xl text-white">
             <h3 className="text-lg font-semibold">Wallet Balance</h3>
-            <p className="text-3xl font-bold mt-2">$1,250.00</p>
+            <p className="text-3xl font-bold mt-2">BWP 1,250.00</p>
             <div className="flex gap-2 mt-4">
               <Button variant="secondary" size="sm" className="flex-1">Deposit</Button>
               <Button variant="secondary" size="sm" className="flex-1">Withdraw</Button>
@@ -76,7 +76,7 @@ const Profile = () => {
               <Mail className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
                 <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium">john.doe@example.com</p>
+                <p className="font-medium">kgosi.kgafela@example.com</p>
               </div>
             </div>
           </Card>
@@ -85,7 +85,7 @@ const Profile = () => {
               <Phone className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
                 <p className="text-sm text-muted-foreground">Phone</p>
-                <p className="font-medium">+1 234 567 890</p>
+                <p className="font-medium">+267 77593604</p>
               </div>
             </div>
           </Card>

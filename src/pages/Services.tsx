@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, TrendingUp, Target, Trophy, DollarSign, Users, History, ChevronRight } from "lucide-react";
+import { TrendingUp, Target, Trophy, DollarSign, Users, History, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,40 +10,40 @@ const Services = () => {
 
   const services = [
     {
-      title: "Live Betting",
-      description: "Real-time odds and instant bet placement",
+      title: "Papadi tsa Jaanong",
+      description: "Live Betting - Place bets on ongoing matches",
       icon: TrendingUp,
-      path: "/driving-services"
+      path: "/live-betting"
     },
     {
-      title: "Popular Markets",
-      description: "Most active betting markets and events",
+      title: "Metshameko e e Tumileng",
+      description: "Popular Markets - Explore trending betting markets",
       icon: Target,
-      path: "/permits"
+      path: "/popular-markets"
     },
     {
-      title: "Tournament Pools",
-      description: "Join or create betting pools for major events",
+      title: "Dipapadi tsa Me",
+      description: "My Bets - Track your active and settled bets",
       icon: Trophy,
-      path: "/vehicle-registration"
+      path: "/my-bets"
     },
     {
-      title: "Payment Services",
-      description: "Multiple payment options for deposits/withdrawals",
+      title: "Madi a Me",
+      description: "Wallet - Manage your deposits and withdrawals (BWP)",
       icon: DollarSign,
-      path: "/road-tax"
+      path: "/wallet"
     },
     {
-      title: "Social Betting",
-      description: "Bet and compete with friends",
+      title: "Papadi le Ditsala",
+      description: "Peer Betting - Create and join betting pools with friends",
       icon: Users,
-      path: "/report-issue"
+      path: "/peer-betting"
     },
     {
-      title: "Statistics & Analysis",
-      description: "Detailed betting history and performance analytics",
+      title: "Ditso tsa Dipapadi",
+      description: "Betting History - View your complete betting history",
       icon: History,
-      path: "/digital-id"
+      path: "/betting-history"
     }
   ];
 
@@ -56,7 +56,7 @@ const Services = () => {
           className="space-y-4"
         >
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Betting Services</h1>
+            <h1 className="text-2xl font-bold">Ditirelo</h1>
             <Button variant="outline" size="sm">
               View All
             </Button>

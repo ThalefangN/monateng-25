@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, BookOpen, GraduationCap, Library, Award, MessageSquare } from "lucide-react";
+import { ArrowLeft, TrendingUp, Target, Trophy, DollarSign, Users, History, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,68 +10,87 @@ const Services = () => {
 
   const services = [
     {
-      title: "Online Courses",
-      description: "Access our wide range of online courses and learning materials",
-      icon: BookOpen,
+      title: "Live Betting",
+      description: "Real-time odds and instant bet placement",
+      icon: TrendingUp,
       path: "/driving-services"
     },
     {
-      title: "Academic Programs",
-      description: "Browse and enroll in academic programs and certifications",
-      icon: GraduationCap,
+      title: "Popular Markets",
+      description: "Most active betting markets and events",
+      icon: Target,
       path: "/permits"
     },
     {
-      title: "Digital Library",
-      description: "Access our extensive collection of digital learning resources",
-      icon: Library,
+      title: "Tournament Pools",
+      description: "Join or create betting pools for major events",
+      icon: Trophy,
       path: "/vehicle-registration"
     },
     {
-      title: "Student Support",
-      description: "Get help from our tutors and academic support team",
-      icon: MessageSquare,
+      title: "Payment Services",
+      description: "Multiple payment options for deposits/withdrawals",
+      icon: DollarSign,
+      path: "/road-tax"
+    },
+    {
+      title: "Social Betting",
+      description: "Bet and compete with friends",
+      icon: Users,
       path: "/report-issue"
+    },
+    {
+      title: "Statistics & Analysis",
+      description: "Detailed betting history and performance analytics",
+      icon: History,
+      path: "/digital-id"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background pb-16">
-      <div className="p-4 space-y-4">
+      <div className="p-4 space-y-6">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center space-x-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-4"
         >
-          <Button variant="ghost" size="icon" onClick={() => navigate("/home")}>
-            <ArrowLeft className="h-6 w-6" />
-          </Button>
-          <h1 className="text-2xl font-bold">Learning Services</h1>
-        </motion.div>
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold">Betting Services</h1>
+            <Button variant="outline" size="sm">
+              View All
+            </Button>
+          </div>
 
-        <div className="space-y-4">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => navigate(service.path)}
-            >
-              <Card className="cursor-pointer hover:bg-accent transition-colors">
-                <CardHeader className="flex flex-row items-start space-x-4">
-                  <div className="p-2 rounded-full bg-primary/10 text-primary">
-                    <service.icon className="h-5 w-5" />
-                  </div>
-                  <div className="space-y-1">
-                    <CardTitle>{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </div>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+          <div className="space-y-4">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card
+                  className="cursor-pointer hover:bg-accent transition-colors"
+                  onClick={() => navigate(service.path)}
+                >
+                  <CardHeader className="flex flex-row items-center justify-between p-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="p-2 rounded-full bg-primary/10">
+                        <service.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-lg">{service.title}</CardTitle>
+                        <CardDescription>{service.description}</CardDescription>
+                      </div>
+                    </div>
+                    <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
       <BottomNav />
     </div>

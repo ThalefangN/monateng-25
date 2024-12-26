@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Bell, Info, AlertTriangle, CheckCircle } from "lucide-react";
+import { ArrowLeft, Bell, Info, AlertTriangle, CheckCircle, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,26 +10,33 @@ const Notifications = () => {
 
   const notifications = [
     {
-      title: "License Renewal Reminder",
-      description: "Your driving license will expire in 30 days. Renew now to avoid penalties.",
-      icon: Info,
-      type: "info",
+      title: "Bet Won!",
+      description: "Congratulations! You won $50 from your last bet on Manchester United vs Arsenal",
+      icon: CheckCircle,
+      type: "success",
       date: "2 hours ago"
     },
     {
-      title: "Road Tax Due",
-      description: "Your road tax payment is due in 5 days. Pay now to avoid late fees.",
-      icon: AlertTriangle,
-      type: "warning",
+      title: "New Pool Available",
+      description: "A new betting pool for Champions League Final is now open",
+      icon: Info,
+      type: "info",
       date: "1 day ago"
     },
     {
-      title: "Vehicle Registration Complete",
-      description: "Your vehicle registration has been successfully renewed.",
-      icon: CheckCircle,
-      type: "success",
+      title: "Low Balance Alert",
+      description: "Your betting wallet balance is below $10. Add funds to continue betting.",
+      icon: AlertTriangle,
+      type: "warning",
       date: "2 days ago"
     },
+    {
+      title: "Withdrawal Successful",
+      description: "Your withdrawal of $100 has been processed successfully",
+      icon: DollarSign,
+      type: "success",
+      date: "3 days ago"
+    }
   ];
 
   return (
@@ -40,9 +47,6 @@ const Notifications = () => {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center space-x-4"
         >
-          <Button variant="ghost" size="icon" onClick={() => navigate("/home")}>
-            <ArrowLeft className="h-6 w-6" />
-          </Button>
           <h1 className="text-2xl font-bold">Notifications</h1>
         </motion.div>
 

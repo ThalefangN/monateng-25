@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, BookOpen, GraduationCap, Library, Award, MessageSquare, QrCode, User } from "lucide-react";
+import { Search, TrendingUp, Target, Trophy, DollarSign, Users, History, Wallet } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";
@@ -11,39 +11,39 @@ const Home = () => {
   
   const services = [
     {
-      title: "Online Courses",
-      description: "Access our wide range of online courses and learning materials",
-      icon: BookOpen,
+      title: "Live Betting",
+      description: "Place bets on ongoing matches and events",
+      icon: TrendingUp,
       path: "/driving-services"
     },
     {
-      title: "Academic Programs",
-      description: "Browse and enroll in academic programs and certifications",
-      icon: GraduationCap,
+      title: "Popular Markets",
+      description: "Explore trending betting markets and odds",
+      icon: Target,
       path: "/permits"
     },
     {
-      title: "Digital Library",
-      description: "Access our extensive collection of digital learning resources",
-      icon: Library,
+      title: "My Bets",
+      description: "Track your active and settled bets",
+      icon: Trophy,
       path: "/vehicle-registration"
     },
     {
-      title: "Assessments & Exams",
-      description: "Take online assessments and track your progress",
-      icon: Award,
+      title: "Wallet",
+      description: "Manage your deposits and withdrawals",
+      icon: DollarSign,
       path: "/road-tax"
     },
     {
-      title: "Student Support",
-      description: "Get help from our tutors and academic support team",
-      icon: MessageSquare,
+      title: "Peer Betting",
+      description: "Create and join betting pools with friends",
+      icon: Users,
       path: "/report-issue"
     },
     {
-      title: "Student ID / Portal",
-      description: "Access your student profile and digital credentials",
-      icon: QrCode,
+      title: "Betting History",
+      description: "View your complete betting history",
+      icon: History,
       path: "/digital-id"
     },
   ];
@@ -58,26 +58,27 @@ const Home = () => {
         >
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">Welcome to BotseduLearn!</h1>
-              <p className="text-muted-foreground">Discover your learning journey today</p>
+              <h1 className="text-2xl font-bold">Welcome to BETCONNECT!</h1>
+              <p className="text-muted-foreground">Your P2P betting platform</p>
             </div>
             <Button size="icon" variant="ghost" onClick={() => navigate("/profile")}>
-              <User className="h-6 w-6" />
+              <Wallet className="h-6 w-6" />
             </Button>
           </div>
 
-          <div className="rounded-xl overflow-hidden shadow-lg h-48 mb-6">
-            <img 
-              src="/lovable-uploads/18a8902a-f4eb-4b86-8c45-c8914ecb854c.png"
-              alt="BotseduLearn Banner"
-              className="w-full h-full object-cover"
-            />
+          <div className="bg-gradient-to-r from-[#D946EF] to-[#F97316] p-6 rounded-xl text-white">
+            <h2 className="text-xl font-bold">Balance</h2>
+            <p className="text-3xl font-bold mt-2">$1,250.00</p>
+            <div className="flex gap-2 mt-4">
+              <Button variant="secondary" size="sm" className="flex-1">Deposit</Button>
+              <Button variant="secondary" size="sm" className="flex-1">Withdraw</Button>
+            </div>
           </div>
         </motion.div>
 
         <div className="relative">
           <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-          <Input className="pl-10" placeholder="Search courses, programs..." />
+          <Input className="pl-10" placeholder="Search markets, events..." />
         </div>
 
         <div className="grid gap-4">

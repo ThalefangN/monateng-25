@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { User, Mail, Lock, Wallet, CreditCard } from "lucide-react";
+import { User, Mail, Lock, Brain } from "lucide-react";
 import PhoneInput from "@/components/PhoneInput";
 import { useState } from "react";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
@@ -49,8 +49,8 @@ const SignUp = () => {
         )}
 
         <div className="text-center">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">BETCONNECT</h1>
-          <p className="text-muted-foreground mt-2">Create your betting account</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">NALEDI AI</h1>
+          <p className="text-muted-foreground mt-2">Begin your wellness journey</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -80,16 +80,8 @@ const SignUp = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">Phone Number (Optional)</Label>
               <PhoneInput value={phone} onChange={setPhone} />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="payment">Payment Method</Label>
-              <div className="relative">
-                <CreditCard className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="payment" placeholder="Add payment method" className="pl-10" />
-              </div>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -98,7 +90,7 @@ const SignUp = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I am over 18 and agree to BETCONNECT's terms of service and privacy policy
+                I agree to Naledi AI's terms of service and privacy policy
               </label>
             </div>
           </div>
@@ -109,7 +101,7 @@ const SignUp = () => {
             size="lg" 
             disabled={!agreed || !isOnline}
           >
-            Create Betting Account
+            Start Your Wellness Journey
           </Button>
 
           <p className="text-center text-sm text-muted-foreground">

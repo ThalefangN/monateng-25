@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
+import { Brain, Heart, Shield } from "lucide-react";
 
 const GetStarted = () => {
   const isOnline = useOnlineStatus();
@@ -37,10 +38,10 @@ const GetStarted = () => {
 
         <div className="space-y-4">
           <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">
-            BETCONNECT
+            NALEDI AI
           </h1>
           <p className="text-white/80">
-            Your Ultimate Peer-to-Peer Betting Platform
+            Your Personal Mental Health & Wellness Companion
           </p>
         </div>
         
@@ -48,9 +49,24 @@ const GetStarted = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/30 to-[#D946EF]/30 z-10" />
           <img
             src="/lovable-uploads/photo-1488590528505-98d2b5aba04b"
-            alt="BETCONNECT Banner"
+            alt="Naledi AI Banner"
             className="object-cover w-full h-full"
           />
+        </div>
+
+        <div className="grid grid-cols-3 gap-4 text-white">
+          <div className="text-center space-y-2">
+            <Brain className="mx-auto h-8 w-8 text-[#D946EF]" />
+            <p className="text-sm">AI Support</p>
+          </div>
+          <div className="text-center space-y-2">
+            <Heart className="mx-auto h-8 w-8 text-[#F97316]" />
+            <p className="text-sm">Mental Wellness</p>
+          </div>
+          <div className="text-center space-y-2">
+            <Shield className="mx-auto h-8 w-8 text-[#8B5CF6]" />
+            <p className="text-sm">Privacy First</p>
+          </div>
         </div>
 
         <div className="space-y-4">
@@ -60,7 +76,7 @@ const GetStarted = () => {
             size="lg"
             onClick={handleAction}
           >
-            <Link to="/signup">Create Account</Link>
+            <Link to="/signup">Start Your Journey</Link>
           </Button>
           <Button 
             asChild 
@@ -69,32 +85,32 @@ const GetStarted = () => {
             size="lg"
             onClick={handleAction}
           >
-            <Link to="/signin">Sign In</Link>
+            <Link to="/signin">Welcome Back</Link>
           </Button>
         </div>
 
         <p className="text-sm text-white/60">
-          By continuing, you agree to our Terms of Service and Privacy Policy
+          Your mental health journey begins here
         </p>
 
         <div className="space-y-4 bg-black/20 p-6 rounded-xl backdrop-blur-sm">
-          <h2 className="text-xl font-semibold text-white">Why Choose BETCONNECT?</h2>
+          <h2 className="text-xl font-semibold text-white">Why Choose Naledi AI?</h2>
           <div className="grid grid-cols-2 gap-4 text-left">
             <div className="space-y-1">
-              <p className="text-[#D946EF] font-medium">Secure</p>
-              <p className="text-sm text-white/60">Advanced encryption</p>
+              <p className="text-[#D946EF] font-medium">24/7 Support</p>
+              <p className="text-sm text-white/60">Always here for you</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#F97316] font-medium">Fast</p>
-              <p className="text-sm text-white/60">Instant payouts</p>
+              <p className="text-[#F97316] font-medium">Private</p>
+              <p className="text-sm text-white/60">Secure chats</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#D946EF] font-medium">P2P</p>
-              <p className="text-sm text-white/60">Direct betting</p>
+              <p className="text-[#D946EF] font-medium">AI-Powered</p>
+              <p className="text-sm text-white/60">Smart assistance</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#F97316] font-medium">24/7</p>
-              <p className="text-sm text-white/60">Always available</p>
+              <p className="text-[#F97316] font-medium">Personalized</p>
+              <p className="text-sm text-white/60">Tailored for you</p>
             </div>
           </div>
         </div>

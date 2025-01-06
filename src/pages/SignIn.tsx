@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Mail, Lock, Wallet } from "lucide-react";
+import { Mail, Lock, Brain } from "lucide-react";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
 
@@ -44,8 +44,8 @@ const SignIn = () => {
         )}
 
         <div className="text-center">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">BETCONNECT</h1>
-          <p className="text-muted-foreground mt-2">Sign in to your betting account</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">NALEDI AI</h1>
+          <p className="text-muted-foreground mt-2">Welcome back to your wellness journey</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -54,7 +54,7 @@ const SignIn = () => {
               <Label htmlFor="email">Email</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="email" type="email" placeholder="Enter email" className="pl-10" />
+                <Input id="email" type="email" placeholder="Enter your email" className="pl-10" />
               </div>
             </div>
 
@@ -62,13 +62,13 @@ const SignIn = () => {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                <Input id="password" type="password" placeholder="Enter password" className="pl-10" />
+                <Input id="password" type="password" placeholder="Enter your password" className="pl-10" />
               </div>
             </div>
           </div>
 
           <Button type="submit" className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]" size="lg">
-            Sign In
+            Continue Your Journey
           </Button>
 
           <div className="flex items-center justify-between">
@@ -91,8 +91,8 @@ const SignIn = () => {
 
           <div className="grid gap-4">
             <Button variant="outline" type="button" className="w-full">
-              <Wallet className="mr-2 h-4 w-4" />
-              Check Balance
+              <Brain className="mr-2 h-4 w-4" />
+              Start Emergency Session
             </Button>
           </div>
         </form>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
-import { Brain, Heart, Sparkles } from "lucide-react";
+import { Brain, Heart, Shield } from "lucide-react";
 
 const GetStarted = () => {
   const isOnline = useOnlineStatus();
@@ -21,7 +21,7 @@ const GetStarted = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E5DEFF] to-[#9b87f5] flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#E5DEFF] to-[#D3E4FD] flex flex-col items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,37 +37,38 @@ const GetStarted = () => {
         )}
 
         <div className="space-y-4">
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Brain className="w-16 h-16 mx-auto text-[#6E59A5]" />
-          </motion.div>
-          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] text-transparent bg-clip-text">
+          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-transparent bg-clip-text">
             NALEDI AI
           </h1>
-          <p className="text-[#222222]/80">
-            Your Personal Mental Health Companion
+          <p className="text-gray-600">
+            Your Personalized Mental Health & Wellness Companion
           </p>
         </div>
         
-        <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-sm p-6">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#D6BCFA]/30 to-[#9b87f5]/30 z-10" />
-          <div className="relative z-20 h-full flex flex-col justify-between">
-            <div className="space-y-4">
-              <Heart className="w-8 h-8 text-[#D946EF]" />
-              <h3 className="text-xl font-semibold text-white">Mental Wellness Support</h3>
-              <p className="text-white/80">24/7 AI-powered companion for your emotional well-being</p>
+        <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl bg-white/30 backdrop-blur-sm p-6">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E5DEFF]/30 to-[#D3E4FD]/30 z-10" />
+          <div className="relative z-20 h-full flex flex-col justify-center space-y-6">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="flex flex-col items-center space-y-2">
+                <Brain className="h-8 w-8 text-[#6366F1]" />
+                <p className="text-sm font-medium text-gray-700">AI-Powered Support</p>
+              </div>
+              <div className="flex flex-col items-center space-y-2">
+                <Heart className="h-8 w-8 text-[#8B5CF6]" />
+                <p className="text-sm font-medium text-gray-700">Mental Wellness</p>
+              </div>
+              <div className="flex flex-col items-center space-y-2">
+                <Shield className="h-8 w-8 text-[#6366F1]" />
+                <p className="text-sm font-medium text-gray-700">Private & Secure</p>
+              </div>
             </div>
-            <Sparkles className="w-8 h-8 text-[#F97316]" />
           </div>
         </div>
 
         <div className="space-y-4">
           <Button 
             asChild 
-            className={`w-full bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] hover:opacity-90 transition-opacity ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`w-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:opacity-90 transition-opacity ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
             size="lg"
             onClick={handleAction}
           >
@@ -76,7 +77,7 @@ const GetStarted = () => {
           <Button 
             asChild 
             variant="outline" 
-            className={`w-full border-[#7E69AB] text-[#222222] hover:bg-[#7E69AB]/10 ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`w-full border-[#6366F1] text-[#6366F1] hover:bg-[#6366F1]/10 ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
             size="lg"
             onClick={handleAction}
           >
@@ -84,28 +85,28 @@ const GetStarted = () => {
           </Button>
         </div>
 
-        <p className="text-sm text-[#222222]/60">
-          Your mental health journey begins here
+        <p className="text-sm text-gray-600">
+          By continuing, you agree to our Terms of Service and Privacy Policy
         </p>
 
         <div className="space-y-4 bg-white/20 p-6 rounded-xl backdrop-blur-sm">
-          <h2 className="text-xl font-semibold text-[#222222]">Why Choose Naledi AI?</h2>
+          <h2 className="text-xl font-semibold text-gray-800">Why Choose Naledi AI?</h2>
           <div className="grid grid-cols-2 gap-4 text-left">
             <div className="space-y-1">
-              <p className="text-[#7E69AB] font-medium">24/7 Support</p>
-              <p className="text-sm text-[#222222]/60">Always here for you</p>
+              <p className="text-[#6366F1] font-medium">Private</p>
+              <p className="text-sm text-gray-600">End-to-end encryption</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#6E59A5] font-medium">Private</p>
-              <p className="text-sm text-[#222222]/60">Secure chats</p>
+              <p className="text-[#8B5CF6] font-medium">24/7 Support</p>
+              <p className="text-sm text-gray-600">Always here for you</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#7E69AB] font-medium">AI-Powered</p>
-              <p className="text-sm text-[#222222]/60">Smart assistance</p>
+              <p className="text-[#6366F1] font-medium">AI-Powered</p>
+              <p className="text-sm text-gray-600">Personalized care</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#6E59A5] font-medium">Personalized</p>
-              <p className="text-sm text-[#222222]/60">Tailored support</p>
+              <p className="text-[#8B5CF6] font-medium">Inclusive</p>
+              <p className="text-sm text-gray-600">Cultural awareness</p>
             </div>
           </div>
         </div>

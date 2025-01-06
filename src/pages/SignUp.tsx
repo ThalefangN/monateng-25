@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { User, Mail, Lock, Brain } from "lucide-react";
+import { User, Mail, Lock, Wallet, CreditCard } from "lucide-react";
 import PhoneInput from "@/components/PhoneInput";
 import { useState } from "react";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
@@ -33,7 +33,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E5DEFF] to-[#9b87f5] flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#1A1F2C] to-[#8B5CF6] flex flex-col items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -49,71 +49,72 @@ const SignUp = () => {
         )}
 
         <div className="text-center">
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Brain className="w-12 h-12 mx-auto text-[#6E59A5]" />
-          </motion.div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] text-transparent bg-clip-text">NALEDI AI</h1>
-          <p className="text-[#222222]/60 mt-2">Start your mental wellness journey</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">BETCONNECT</h1>
+          <p className="text-muted-foreground mt-2">Create your betting account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="username" className="text-[#222222]">Full Name</Label>
+              <Label htmlFor="username">Full Name</Label>
               <div className="relative">
-                <User className="absolute left-3 top-3 h-5 w-5 text-[#222222]/60" />
-                <Input id="username" placeholder="Enter your full name" className="pl-10 bg-white/50 border-[#7E69AB]/30" />
+                <User className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="username" placeholder="Enter your full name" className="pl-10" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-[#222222]">Email</Label>
+              <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 h-5 w-5 text-[#222222]/60" />
-                <Input id="email" type="email" placeholder="Enter your email" className="pl-10 bg-white/50 border-[#7E69AB]/30" />
+                <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="email" type="email" placeholder="Enter your email" className="pl-10" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-[#222222]">Password</Label>
+              <Label htmlFor="password">Password</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 h-5 w-5 text-[#222222]/60" />
-                <Input id="password" type="password" placeholder="Create a secure password" className="pl-10 bg-white/50 border-[#7E69AB]/30" />
+                <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="password" type="password" placeholder="Create a secure password" className="pl-10" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="text-[#222222]">Phone Number</Label>
+              <Label htmlFor="phone">Phone Number</Label>
               <PhoneInput value={phone} onChange={setPhone} />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="payment">Payment Method</Label>
+              <div className="relative">
+                <CreditCard className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="payment" placeholder="Add payment method" className="pl-10" />
+              </div>
             </div>
 
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" checked={agreed} onCheckedChange={(checked) => setAgreed(checked as boolean)} />
               <label
                 htmlFor="terms"
-                className="text-sm font-medium leading-none text-[#222222]/80 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I agree to Naledi AI's terms of service and privacy policy
+                I am over 18 and agree to BETCONNECT's terms of service and privacy policy
               </label>
             </div>
           </div>
 
           <Button 
             type="submit" 
-            className={`w-full bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] ${!isOnline ? "opacity-50" : ""}`} 
+            className={`w-full bg-gradient-to-r from-[#D946EF] to-[#F97316] ${!isOnline ? "opacity-50" : ""}`} 
             size="lg" 
             disabled={!agreed || !isOnline}
           >
-            Create Account
+            Create Betting Account
           </Button>
 
-          <p className="text-center text-sm text-[#222222]/60">
+          <p className="text-center text-sm text-muted-foreground">
             Already have an account?{" "}
-            <Link to="/signin" className="font-medium text-[#6E59A5] hover:underline">
+            <Link to="/signin" className="font-medium text-primary hover:underline">
               Sign in
             </Link>
           </p>

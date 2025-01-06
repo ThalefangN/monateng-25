@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Mail, Lock, Brain } from "lucide-react";
+import { Mail, Lock, Wallet } from "lucide-react";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
 
@@ -28,7 +28,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E5DEFF] to-[#9b87f5] flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#1A1F2C] to-[#8B5CF6] flex flex-col items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -44,61 +44,55 @@ const SignIn = () => {
         )}
 
         <div className="text-center">
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Brain className="w-12 h-12 mx-auto text-[#6E59A5]" />
-          </motion.div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] text-transparent bg-clip-text">NALEDI AI</h1>
-          <p className="text-[#222222]/60 mt-2">Welcome back to your mental wellness companion</p>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">BETCONNECT</h1>
+          <p className="text-muted-foreground mt-2">Sign in to your betting account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-[#222222]">Email</Label>
+              <Label htmlFor="email">Email</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 h-5 w-5 text-[#222222]/60" />
-                <Input id="email" type="email" placeholder="Enter email" className="pl-10 bg-white/50 border-[#7E69AB]/30" />
+                <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="email" type="email" placeholder="Enter email" className="pl-10" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-[#222222]">Password</Label>
+              <Label htmlFor="password">Password</Label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 h-5 w-5 text-[#222222]/60" />
-                <Input id="password" type="password" placeholder="Enter password" className="pl-10 bg-white/50 border-[#7E69AB]/30" />
+                <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                <Input id="password" type="password" placeholder="Enter password" className="pl-10" />
               </div>
             </div>
           </div>
 
-          <Button type="submit" className="w-full bg-gradient-to-r from-[#7E69AB] to-[#6E59A5]" size="lg">
+          <Button type="submit" className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]" size="lg">
             Sign In
           </Button>
 
           <div className="flex items-center justify-between">
-            <Link to="/forgot-password" className="text-sm text-[#6E59A5] hover:underline">
+            <Link to="/forgot-password" className="text-sm text-primary hover:underline">
               Forgot password?
             </Link>
-            <Link to="/signup" className="text-sm text-[#6E59A5] hover:underline">
+            <Link to="/signup" className="text-sm text-primary hover:underline">
               Create account
             </Link>
           </div>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-[#7E69AB]/30" />
+              <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-transparent px-2 text-[#222222]/60">Or continue with</span>
+              <span className="bg-background px-2 text-muted-foreground">Quick access</span>
             </div>
           </div>
 
           <div className="grid gap-4">
-            <Button variant="outline" type="button" className="w-full border-[#7E69AB]/30 text-[#222222] hover:bg-[#7E69AB]/10">
-              Continue as Guest
+            <Button variant="outline" type="button" className="w-full">
+              <Wallet className="mr-2 h-4 w-4" />
+              Check Balance
             </Button>
           </div>
         </form>

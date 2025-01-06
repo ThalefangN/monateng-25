@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useToast } from "@/hooks/use-toast";
+import { Brain, Heart, Sparkles } from "lucide-react";
 
 const GetStarted = () => {
   const isOnline = useOnlineStatus();
@@ -20,7 +21,7 @@ const GetStarted = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1F2C] to-[#8B5CF6] flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#E5DEFF] to-[#9b87f5] flex flex-col items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,27 +37,37 @@ const GetStarted = () => {
         )}
 
         <div className="space-y-4">
-          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">
-            BETCONNECT
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Brain className="w-16 h-16 mx-auto text-[#6E59A5]" />
+          </motion.div>
+          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] text-transparent bg-clip-text">
+            NALEDI AI
           </h1>
-          <p className="text-white/80">
-            Your Ultimate Peer-to-Peer Betting Platform
+          <p className="text-[#222222]/80">
+            Your Personal Mental Health Companion
           </p>
         </div>
         
-        <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/30 to-[#D946EF]/30 z-10" />
-          <img
-            src="/lovable-uploads/photo-1488590528505-98d2b5aba04b"
-            alt="BETCONNECT Banner"
-            className="object-cover w-full h-full"
-          />
+        <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-sm p-6">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#D6BCFA]/30 to-[#9b87f5]/30 z-10" />
+          <div className="relative z-20 h-full flex flex-col justify-between">
+            <div className="space-y-4">
+              <Heart className="w-8 h-8 text-[#D946EF]" />
+              <h3 className="text-xl font-semibold text-white">Mental Wellness Support</h3>
+              <p className="text-white/80">24/7 AI-powered companion for your emotional well-being</p>
+            </div>
+            <Sparkles className="w-8 h-8 text-[#F97316]" />
+          </div>
         </div>
 
         <div className="space-y-4">
           <Button 
             asChild 
-            className={`w-full bg-gradient-to-r from-[#D946EF] to-[#F97316] hover:opacity-90 transition-opacity ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`w-full bg-gradient-to-r from-[#7E69AB] to-[#6E59A5] hover:opacity-90 transition-opacity ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
             size="lg"
             onClick={handleAction}
           >
@@ -65,7 +76,7 @@ const GetStarted = () => {
           <Button 
             asChild 
             variant="outline" 
-            className={`w-full border-[#D946EF] text-white hover:bg-[#D946EF]/10 ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`w-full border-[#7E69AB] text-[#222222] hover:bg-[#7E69AB]/10 ${!isOnline ? "opacity-50 cursor-not-allowed" : ""}`}
             size="lg"
             onClick={handleAction}
           >
@@ -73,28 +84,28 @@ const GetStarted = () => {
           </Button>
         </div>
 
-        <p className="text-sm text-white/60">
-          By continuing, you agree to our Terms of Service and Privacy Policy
+        <p className="text-sm text-[#222222]/60">
+          Your mental health journey begins here
         </p>
 
-        <div className="space-y-4 bg-black/20 p-6 rounded-xl backdrop-blur-sm">
-          <h2 className="text-xl font-semibold text-white">Why Choose BETCONNECT?</h2>
+        <div className="space-y-4 bg-white/20 p-6 rounded-xl backdrop-blur-sm">
+          <h2 className="text-xl font-semibold text-[#222222]">Why Choose Naledi AI?</h2>
           <div className="grid grid-cols-2 gap-4 text-left">
             <div className="space-y-1">
-              <p className="text-[#D946EF] font-medium">Secure</p>
-              <p className="text-sm text-white/60">Advanced encryption</p>
+              <p className="text-[#7E69AB] font-medium">24/7 Support</p>
+              <p className="text-sm text-[#222222]/60">Always here for you</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#F97316] font-medium">Fast</p>
-              <p className="text-sm text-white/60">Instant payouts</p>
+              <p className="text-[#6E59A5] font-medium">Private</p>
+              <p className="text-sm text-[#222222]/60">Secure chats</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#D946EF] font-medium">P2P</p>
-              <p className="text-sm text-white/60">Direct betting</p>
+              <p className="text-[#7E69AB] font-medium">AI-Powered</p>
+              <p className="text-sm text-[#222222]/60">Smart assistance</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[#F97316] font-medium">24/7</p>
-              <p className="text-sm text-white/60">Always available</p>
+              <p className="text-[#6E59A5] font-medium">Personalized</p>
+              <p className="text-sm text-[#222222]/60">Tailored support</p>
             </div>
           </div>
         </div>

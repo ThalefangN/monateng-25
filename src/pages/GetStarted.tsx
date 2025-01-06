@@ -48,9 +48,9 @@ const GetStarted = () => {
         <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/30 to-[#D946EF]/30 z-10" />
           <img
-            src="/lovable-uploads/photo-1488590528505-98d2b5aba04b"
-            alt="Naledi AI Banner"
-            className="object-cover w-full h-full"
+            src="/lovable-uploads/3b3e62fd-4a43-43c0-b403-4de37b5a3f36.png"
+            alt="Naledi AI Logo"
+            className="object-contain w-full h-full bg-white p-8"
           />
         </div>
 

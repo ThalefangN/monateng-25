@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, Mail, Phone, Shield, LogOut, ChevronRight, Wallet, History, Settings, Users } from "lucide-react";
+import { Mail, Phone, Shield, LogOut, ChevronRight, Brain, Heart, History, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,24 +10,24 @@ const Profile = () => {
 
   const menuItems = [
     {
-      title: "Betting History",
+      title: "Mental Health Progress",
       icon: History,
-      onClick: () => console.log("Navigate to betting history")
+      onClick: () => console.log("Navigate to mental health history")
     },
     {
-      title: "Payment Methods",
-      icon: Wallet,
-      onClick: () => console.log("Navigate to payment methods")
+      title: "Wellness Goals",
+      icon: Heart,
+      onClick: () => console.log("Navigate to wellness goals")
     },
     {
-      title: "Friends & Social",
-      icon: Users,
-      onClick: () => console.log("Navigate to friends")
+      title: "AI Chat History",
+      icon: Brain,
+      onClick: () => console.log("Navigate to chat history")
     },
     {
-      title: "Security Settings",
+      title: "Privacy Settings",
       icon: Shield,
-      onClick: () => console.log("Navigate to security settings")
+      onClick: () => console.log("Navigate to privacy settings")
     },
     {
       title: "Sign Out",
@@ -50,22 +50,22 @@ const Profile = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <img 
-              src="/lovable-uploads/4b3326e6-8879-4b1b-b471-a29f6fc8e97c.png"
+              src="/lovable-uploads/3b3e62fd-4a43-43c0-b403-4de37b5a3f36.png"
               alt="Profile"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover bg-white p-4"
             />
           </motion.div>
           <div className="text-center">
-            <h2 className="text-xl font-semibold">Kgosi Kgafela</h2>
-            <p className="text-muted-foreground">Member since 2024</p>
+            <h2 className="text-xl font-semibold">Naledi AI User</h2>
+            <p className="text-muted-foreground">Mental Health Journey Since 2024</p>
           </div>
 
           <div className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316] p-6 rounded-xl text-white">
-            <h3 className="text-lg font-semibold">Wallet Balance</h3>
-            <p className="text-3xl font-bold mt-2">BWP 1,250.00</p>
+            <h3 className="text-lg font-semibold">Wellness Score</h3>
+            <p className="text-3xl font-bold mt-2">85/100</p>
             <div className="flex gap-2 mt-4">
-              <Button variant="secondary" size="sm" className="flex-1">Deposit</Button>
-              <Button variant="secondary" size="sm" className="flex-1">Withdraw</Button>
+              <Button variant="secondary" size="sm" className="flex-1">View Progress</Button>
+              <Button variant="secondary" size="sm" className="flex-1">Set Goals</Button>
             </div>
           </div>
         </motion.div>
@@ -76,7 +76,7 @@ const Profile = () => {
               <Mail className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
                 <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium">kgosi.kgafela@example.com</p>
+                <p className="font-medium">user@nalediai.com</p>
               </div>
             </div>
           </Card>
@@ -84,8 +84,8 @@ const Profile = () => {
             <div className="flex items-center space-x-4">
               <Phone className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
-                <p className="text-sm text-muted-foreground">Phone</p>
-                <p className="font-medium">+267 77593604</p>
+                <p className="text-sm text-muted-foreground">Emergency Contact</p>
+                <p className="font-medium">+267 XXXXXXXX</p>
               </div>
             </div>
           </Card>

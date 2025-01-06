@@ -20,7 +20,7 @@ const Home = () => {
       title: "Mood Check",
       description: "Track and understand your daily emotions",
       icon: Heart,
-      path: "/mood"
+      path: "/mood-tracker"
     },
     {
       title: "Meditation",
@@ -32,13 +32,13 @@ const Home = () => {
       title: "Daily Journal",
       description: "Record your thoughts and feelings",
       icon: Sun,
-      path: "/journal"
+      path: "/daily-journal"
     },
     {
       title: "Support Groups",
       description: "Connect with others on similar journeys",
       icon: MessageCircle,
-      path: "/groups"
+      path: "/support-groups"
     },
     {
       title: "Progress",
@@ -75,8 +75,22 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button variant="secondary" size="sm" className="flex-1">Track Mood</Button>
-              <Button variant="secondary" size="sm" className="flex-1">Start Chat</Button>
+              <Button 
+                variant="secondary" 
+                size="sm" 
+                className="flex-1"
+                onClick={() => navigate("/mood-tracker")}
+              >
+                Track Mood
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="sm" 
+                className="flex-1"
+                onClick={() => navigate("/chat")}
+              >
+                Start Chat
+              </Button>
             </div>
           </div>
         </motion.div>
@@ -93,6 +107,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
+              onClick={() => navigate(service.path)}
             >
               <ServiceCard {...service} />
             </motion.div>

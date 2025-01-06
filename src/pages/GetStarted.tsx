@@ -45,14 +45,24 @@ const GetStarted = () => {
           </p>
         </div>
         
-        <div className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl">
+        <motion.div 
+          className="relative h-64 w-full rounded-2xl overflow-hidden shadow-xl"
+          animate={{
+            boxShadow: ["0 0 0 0px #22c55e", "0 0 0 4px #22c55e"],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/30 to-[#D946EF]/30 z-10" />
           <img
             src="/lovable-uploads/3b3e62fd-4a43-43c0-b403-4de37b5a3f36.png"
             alt="Naledi AI Logo"
             className="object-contain w-full h-full bg-white p-8"
           />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-3 gap-4 text-white">
           <div className="text-center space-y-2">

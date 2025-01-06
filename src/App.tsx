@@ -14,6 +14,12 @@ import LiveBetting from "./pages/LiveBetting";
 import PopularMarkets from "./pages/PopularMarkets";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import MoodTracker from "./pages/MoodTracker";
+import Chat from "./pages/Chat";
+import Meditation from "./pages/Meditation";
+import DailyJournal from "./pages/DailyJournal";
+import SupportGroups from "./pages/SupportGroups";
+import Progress from "./pages/Progress";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient({
@@ -39,10 +45,14 @@ const App = () => {
             <Route path="/verify" element={<OTPVerification />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/live-betting" element={<LiveBetting />} />
-            <Route path="/popular-markets" element={<PopularMarkets />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/mood-tracker" element={<MoodTracker />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/meditation" element={<Meditation />} />
+            <Route path="/daily-journal" element={<DailyJournal />} />
+            <Route path="/support-groups" element={<SupportGroups />} />
+            <Route path="/progress" element={<Progress />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

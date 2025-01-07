@@ -14,37 +14,43 @@ const Home = () => {
       title: "Talk to Naledi",
       description: "Start a conversation with your AI companion",
       icon: Brain,
-      path: "/chat"
+      path: "/chat",
+      gradient: "from-violet-500 to-purple-500"
     },
     {
       title: "Mood Check",
       description: "Track and understand your daily emotions",
       icon: Heart,
-      path: "/mood-tracker"
+      path: "/mood-tracker",
+      gradient: "from-pink-500 to-rose-500"
     },
     {
       title: "Meditation",
       description: "Guided sessions for peace and mindfulness",
       icon: Moon,
-      path: "/meditation"
+      path: "/meditation",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       title: "Daily Journal",
       description: "Record your thoughts and feelings",
       icon: Sun,
-      path: "/daily-journal"
+      path: "/daily-journal",
+      gradient: "from-amber-500 to-yellow-500"
     },
     {
       title: "Support Groups",
       description: "Connect with others on similar journeys",
       icon: MessageCircle,
-      path: "/support-groups"
+      path: "/support-groups",
+      gradient: "from-emerald-500 to-teal-500"
     },
     {
       title: "Progress",
       description: "View your wellness journey timeline",
       icon: History,
-      path: "/progress"
+      path: "/progress",
+      gradient: "from-indigo-500 to-blue-500"
     },
   ];
 
@@ -78,7 +84,7 @@ const Home = () => {
               <Button 
                 variant="secondary" 
                 size="sm" 
-                className="flex-1"
+                className="flex-1 bg-white/20 hover:bg-white/30 text-white"
                 onClick={() => navigate("/mood-tracker")}
               >
                 Track Mood
@@ -86,7 +92,7 @@ const Home = () => {
               <Button 
                 variant="secondary" 
                 size="sm" 
-                className="flex-1"
+                className="flex-1 bg-white/20 hover:bg-white/30 text-white"
                 onClick={() => navigate("/chat")}
               >
                 Start Chat
@@ -107,7 +113,6 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              onClick={() => navigate(service.path)}
             >
               <ServiceCard {...service} />
             </motion.div>

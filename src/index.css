@@ -37,7 +37,7 @@
   }
 
   #root {
-    @apply min-h-screen w-full max-w-md mx-auto;
+    @apply min-h-screen w-full max-w-md mx-auto bg-background;
   }
 }
 

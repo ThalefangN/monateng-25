@@ -4,13 +4,13 @@
  
 @layer base {
   :root {
-    --background: 222 84% 5%;
+    --background: 222 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222 84% 5%;
+    --card: 222 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 84% 5%;
+    --popover: 222 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 283 90% 58%;
+    --primary: 263 90% 58%;
     --primary-foreground: 210 40% 98%;
     --secondary: 217 19% 27%;
     --secondary-foreground: 210 40% 98%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217 19% 27%;
     --input: 217 19% 27%;
-    --ring: 283 90% 58%;
+    --ring: 263 90% 58%;
     --radius: 1rem;
   }
  
@@ -37,7 +37,7 @@
   }
 
   #root {
-    @apply min-h-screen w-full max-w-md mx-auto;
+    @apply min-h-screen w-full;
   }
 }
 

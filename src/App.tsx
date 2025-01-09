@@ -17,6 +17,10 @@ import Notifications from "./pages/Notifications";
 import OrganizerInfo from "./pages/OrganizerInfo";
 import OrganizerVerification from "./pages/OrganizerVerification";
 import Events from "./pages/Events";
+import Tickets from "./pages/Tickets";
+import Venues from "./pages/Venues";
+import Planning from "./pages/Planning";
+import Community from "./pages/Community";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient({
@@ -42,7 +46,11 @@ const App = () => {
             <Route path="/verify" element={<OTPVerification />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/events" element={<Events />} /> {/* Added Events route */}
+            <Route path="/events" element={<Events />} />
+            <Route path="/tickets" element={<Tickets />} />
+            <Route path="/venues" element={<Venues />} />
+            <Route path="/planning" element={<Planning />} />
+            <Route path="/community" element={<Community />} />
             <Route path="/live-betting" element={<LiveBetting />} />
             <Route path="/popular-markets" element={<PopularMarkets />} />
             <Route path="/profile" element={<Profile />} />

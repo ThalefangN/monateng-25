@@ -14,43 +14,37 @@ const Home = () => {
       title: "Talk to Naledi",
       description: "Start a conversation with your AI companion",
       icon: Brain,
-      path: "/chat",
-      gradient: "from-violet-500 to-purple-500"
+      path: "/chat"
     },
     {
       title: "Mood Check",
       description: "Track and understand your daily emotions",
       icon: Heart,
-      path: "/mood-tracker",
-      gradient: "from-pink-500 to-rose-500"
+      path: "/mood"
     },
     {
       title: "Meditation",
       description: "Guided sessions for peace and mindfulness",
       icon: Moon,
-      path: "/meditation",
-      gradient: "from-blue-500 to-cyan-500"
+      path: "/meditation"
     },
     {
       title: "Daily Journal",
       description: "Record your thoughts and feelings",
       icon: Sun,
-      path: "/daily-journal",
-      gradient: "from-amber-500 to-yellow-500"
+      path: "/journal"
     },
     {
       title: "Support Groups",
       description: "Connect with others on similar journeys",
       icon: MessageCircle,
-      path: "/support-groups",
-      gradient: "from-emerald-500 to-teal-500"
+      path: "/groups"
     },
     {
       title: "Progress",
       description: "View your wellness journey timeline",
       icon: History,
-      path: "/progress",
-      gradient: "from-indigo-500 to-blue-500"
+      path: "/progress"
     },
   ];
 
@@ -81,22 +75,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button 
-                variant="secondary" 
-                size="sm" 
-                className="flex-1 bg-white/20 hover:bg-white/30 text-white"
-                onClick={() => navigate("/mood-tracker")}
-              >
-                Track Mood
-              </Button>
-              <Button 
-                variant="secondary" 
-                size="sm" 
-                className="flex-1 bg-white/20 hover:bg-white/30 text-white"
-                onClick={() => navigate("/chat")}
-              >
-                Start Chat
-              </Button>
+              <Button variant="secondary" size="sm" className="flex-1">Track Mood</Button>
+              <Button variant="secondary" size="sm" className="flex-1">Start Chat</Button>
             </div>
           </div>
         </motion.div>

@@ -9,10 +9,9 @@ interface ServiceCardProps {
   description: string;
   icon: LucideIcon;
   path?: string;
-  gradient?: string;
 }
 
-const ServiceCard = ({ title, description, icon: Icon, path, gradient }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon: Icon, path }: ServiceCardProps) => {
   const isOnline = useOnlineStatus();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -34,19 +33,19 @@ const ServiceCard = ({ title, description, icon: Icon, path, gradient }: Service
 
   return (
     <Card 
-      className={`hover:bg-accent transition-colors cursor-pointer bg-gradient-to-r ${gradient} text-white ${
+      className={`hover:bg-accent transition-colors cursor-pointer ${
         !isOnline ? "opacity-50 cursor-not-allowed" : ""
       }`}
       onClick={handleClick}
     >
       <CardHeader>
         <div className="flex items-start space-x-4">
-          <div className="bg-white/10 p-3 rounded-lg">
-            <Icon className="h-6 w-6 text-white" />
+          <div className="bg-primary/10 p-3 rounded-lg">
+            <Icon className="h-6 w-6 text-primary" />
           </div>
           <div className="space-y-1">
-            <CardTitle className="text-lg text-white">{title}</CardTitle>
-            <CardDescription className="text-white/80">{description}</CardDescription>
+            <CardTitle className="text-lg">{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
           </div>
         </div>
       </CardHeader>

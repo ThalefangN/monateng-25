@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
 import OrganizerInfo from "./pages/OrganizerInfo";
 import OrganizerVerification from "./pages/OrganizerVerification";
+import Events from "./pages/Events";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient({
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/verify" element={<OTPVerification />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/events" element={<Events />} /> {/* Added Events route */}
             <Route path="/live-betting" element={<LiveBetting />} />
             <Route path="/popular-markets" element={<PopularMarkets />} />
             <Route path="/profile" element={<Profile />} />

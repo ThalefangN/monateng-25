@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Search, Brain, Calendar, Ticket, MapPin, Users, ClipboardCheck, Building2, ChevronRight, User } from "lucide-react";
+import { Search, Calendar, Ticket, MapPin, Users, ClipboardCheck, Building2, ChevronRight, User } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const Home = () => {
   
   const services = [
     {
-      title: "Book Events",
+      title: "Browse Events",
       description: "Browse and book upcoming events",
       icon: Calendar,
       path: "/events"
@@ -69,7 +69,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button variant="secondary" size="sm" className="flex-1">Browse Events</Button>
+              <Button variant="secondary" size="sm" className="flex-1" onClick={() => navigate("/events")}>Browse Events</Button>
               <Button variant="secondary" size="sm" className="flex-1">Create Event</Button>
             </div>
           </div>

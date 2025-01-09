@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Trophy, DollarSign, Users, History, ChevronRight } from "lucide-react";
+import { Calendar, Ticket, MapPin, Users, Building2, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,40 +10,34 @@ const Services = () => {
 
   const services = [
     {
-      title: "Papadi tsa Jaanong",
-      description: "Live Betting - Place bets on ongoing matches",
-      icon: TrendingUp,
-      path: "/live-betting"
+      title: "Event Discovery",
+      description: "Find and explore exciting events happening in Botswana",
+      icon: Calendar,
+      path: "/events"
     },
     {
-      title: "Metshameko e e Tumileng",
-      description: "Popular Markets - Explore trending betting markets",
-      icon: Target,
-      path: "/popular-markets"
+      title: "Ticket Management",
+      description: "Purchase and manage your event tickets",
+      icon: Ticket,
+      path: "/tickets"
     },
     {
-      title: "Dipapadi tsa Me",
-      description: "My Bets - Track your active and settled bets",
-      icon: Trophy,
-      path: "/my-bets"
+      title: "Venue Discovery",
+      description: "Explore event venues across Botswana",
+      icon: MapPin,
+      path: "/venues"
     },
     {
-      title: "Madi a Me",
-      description: "Wallet - Manage your deposits and withdrawals (BWP)",
-      icon: DollarSign,
-      path: "/wallet"
-    },
-    {
-      title: "Papadi le Ditsala",
-      description: "Peer Betting - Create and join betting pools with friends",
+      title: "Event Community",
+      description: "Connect with other event enthusiasts",
       icon: Users,
-      path: "/peer-betting"
+      path: "/community"
     },
     {
-      title: "Ditso tsa Dipapadi",
-      description: "Betting History - View your complete betting history",
-      icon: History,
-      path: "/betting-history"
+      title: "Event Organizer Portal",
+      description: "Tools and resources for event organizers",
+      icon: Building2,
+      path: "/organizer/info"
     }
   ];
 
@@ -56,10 +50,7 @@ const Services = () => {
           className="space-y-4"
         >
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Ditirelo</h1>
-            <Button variant="outline" size="sm">
-              View All
-            </Button>
+            <h1 className="text-2xl font-bold">M CONNECT Services</h1>
           </div>
 
           <div className="space-y-4">
@@ -74,17 +65,14 @@ const Services = () => {
                   className="cursor-pointer hover:bg-accent transition-colors"
                   onClick={() => navigate(service.path)}
                 >
-                  <CardHeader className="flex flex-row items-center justify-between p-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-2 rounded-full bg-primary/10">
-                        <service.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg">{service.title}</CardTitle>
-                        <CardDescription>{service.description}</CardDescription>
-                      </div>
+                  <CardHeader className="flex flex-row items-center space-x-4">
+                    <div className="p-2 rounded-full bg-primary/10">
+                      <service.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                    <div>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </div>
                   </CardHeader>
                 </Card>
               </motion.div>

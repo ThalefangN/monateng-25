@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Bell, Info, AlertTriangle, CheckCircle, DollarSign } from "lucide-react";
+import { Bell, Calendar, Ticket, MapPin, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,31 +10,31 @@ const Notifications = () => {
 
   const notifications = [
     {
-      title: "Bet Won!",
-      description: "Congratulations! You won $50 from your last bet on Manchester United vs Arsenal",
-      icon: CheckCircle,
-      type: "success",
+      title: "New Event Alert!",
+      description: "Gaborone International Music Festival tickets are now available",
+      icon: Calendar,
+      type: "info",
       date: "2 hours ago"
     },
     {
-      title: "New Pool Available",
-      description: "A new betting pool for Champions League Final is now open",
-      icon: Info,
-      type: "info",
+      title: "Early Bird Tickets",
+      description: "Get 20% off on early bird tickets for upcoming events",
+      icon: Ticket,
+      type: "success",
       date: "1 day ago"
     },
     {
-      title: "Low Balance Alert",
-      description: "Your betting wallet balance is below $10. Add funds to continue betting.",
-      icon: AlertTriangle,
-      type: "warning",
+      title: "New Venue Partner",
+      description: "Welcome our new venue partner - Botswana National Stadium",
+      icon: MapPin,
+      type: "info",
       date: "2 days ago"
     },
     {
-      title: "Withdrawal Successful",
-      description: "Your withdrawal of $100 has been processed successfully",
-      icon: DollarSign,
-      type: "success",
+      title: "Community Update",
+      description: "Join our growing community of event enthusiasts",
+      icon: Users,
+      type: "info",
       date: "3 days ago"
     }
   ];
@@ -45,9 +45,10 @@ const Notifications = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center space-x-4"
+          className="flex items-center justify-between"
         >
-          <h1 className="text-2xl font-bold">Notifications</h1>
+          <h1 className="text-2xl font-bold">M CONNECT Updates</h1>
+          <Bell className="h-6 w-6 text-primary" />
         </motion.div>
 
         <div className="space-y-4">
@@ -62,7 +63,6 @@ const Notifications = () => {
                 <CardHeader className="flex flex-row items-start space-x-4">
                   <div className={`p-2 rounded-full ${
                     notification.type === 'info' ? 'bg-blue-100 text-blue-600' :
-                    notification.type === 'warning' ? 'bg-yellow-100 text-yellow-600' :
                     'bg-green-100 text-green-600'
                   }`}>
                     <notification.icon className="h-5 w-5" />

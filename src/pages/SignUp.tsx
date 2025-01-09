@@ -106,7 +106,7 @@ const SignUp = () => {
 
           <p className="text-center text-sm text-muted-foreground">
             Already have an account?{" "}
-            <Link to="/signin" className="font-bold text-white hover:underline">
+            <Link to="/signin" className="font-medium text-primary hover:underline">
               Sign in
             </Link>
           </p>

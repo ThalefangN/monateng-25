@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Heart, Smile, Moon, MessageCircle, Shield, ChevronRight } from "lucide-react";
+import { TrendingUp, Target, Trophy, DollarSign, Users, History, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -10,40 +10,40 @@ const Services = () => {
 
   const services = [
     {
-      title: "Mental Health Chat",
-      description: "Talk to our AI about your feelings and thoughts",
-      icon: Brain,
-      path: "/chat"
+      title: "Papadi tsa Jaanong",
+      description: "Live Betting - Place bets on ongoing matches",
+      icon: TrendingUp,
+      path: "/live-betting"
     },
     {
-      title: "Mood Tracking",
-      description: "Track and understand your daily emotions",
-      icon: Heart,
-      path: "/mood"
+      title: "Metshameko e e Tumileng",
+      description: "Popular Markets - Explore trending betting markets",
+      icon: Target,
+      path: "/popular-markets"
     },
     {
-      title: "Guided Meditation",
-      description: "Find peace with AI-guided meditation sessions",
-      icon: Moon,
-      path: "/meditation"
+      title: "Dipapadi tsa Me",
+      description: "My Bets - Track your active and settled bets",
+      icon: Trophy,
+      path: "/my-bets"
     },
     {
-      title: "Support Groups",
-      description: "Connect with others on similar journeys",
-      icon: MessageCircle,
-      path: "/groups"
+      title: "Madi a Me",
+      description: "Wallet - Manage your deposits and withdrawals (BWP)",
+      icon: DollarSign,
+      path: "/wallet"
     },
     {
-      title: "Crisis Support",
-      description: "24/7 emergency mental health assistance",
-      icon: Shield,
-      path: "/crisis"
+      title: "Papadi le Ditsala",
+      description: "Peer Betting - Create and join betting pools with friends",
+      icon: Users,
+      path: "/peer-betting"
     },
     {
-      title: "Wellness Tips",
-      description: "Daily mental health and wellness advice",
-      icon: Smile,
-      path: "/tips"
+      title: "Ditso tsa Dipapadi",
+      description: "Betting History - View your complete betting history",
+      icon: History,
+      path: "/betting-history"
     }
   ];
 
@@ -56,7 +56,7 @@ const Services = () => {
           className="space-y-4"
         >
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Mental Health Services</h1>
+            <h1 className="text-2xl font-bold">Ditirelo</h1>
             <Button variant="outline" size="sm">
               View All
             </Button>

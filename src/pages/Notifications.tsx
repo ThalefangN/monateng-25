@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Bell, Info, AlertTriangle, CheckCircle, Brain } from "lucide-react";
+import { ArrowLeft, Bell, Info, AlertTriangle, CheckCircle, DollarSign } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -9,30 +10,30 @@ const Notifications = () => {
 
   const notifications = [
     {
-      title: "Daily Check-in Reminder",
-      description: "Don't forget to log your mood and thoughts for today",
+      title: "Bet Won!",
+      description: "Congratulations! You won $50 from your last bet on Manchester United vs Arsenal",
       icon: CheckCircle,
       type: "success",
       date: "2 hours ago"
     },
     {
-      title: "New Meditation Session",
-      description: "A new guided meditation session is now available",
+      title: "New Pool Available",
+      description: "A new betting pool for Champions League Final is now open",
       icon: Info,
       type: "info",
       date: "1 day ago"
     },
     {
-      title: "Wellness Tip",
-      description: "Remember to take breaks and practice deep breathing exercises",
-      icon: Brain,
-      type: "info",
+      title: "Low Balance Alert",
+      description: "Your betting wallet balance is below $10. Add funds to continue betting.",
+      icon: AlertTriangle,
+      type: "warning",
       date: "2 days ago"
     },
     {
-      title: "Support Group Update",
-      description: "New members have joined your anxiety support group",
-      icon: Bell,
+      title: "Withdrawal Successful",
+      description: "Your withdrawal of $100 has been processed successfully",
+      icon: DollarSign,
       type: "success",
       date: "3 days ago"
     }

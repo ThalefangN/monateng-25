@@ -72,10 +72,10 @@ const SignIn = () => {
           </Button>
 
           <div className="flex items-center justify-between">
-            <Link to="/forgot-password" className="text-sm font-bold text-white hover:underline">
+            <Link to="/forgot-password" className="text-sm text-primary hover:underline">
               Forgot password?
             </Link>
-            <Link to="/signup" className="text-sm font-bold text-white hover:underline">
+            <Link to="/signup" className="text-sm text-primary hover:underline">
               Create account
             </Link>
           </div>

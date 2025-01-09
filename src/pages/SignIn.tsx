@@ -46,7 +46,7 @@ const SignIn = () => {
 
           <div className="text-center md:text-left">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">
-              MONATE CONNECT
+              M CONNECT
             </h1>
             <p className="text-muted-foreground mt-2">Welcome back to your event planning journey</p>
           </div>
@@ -70,8 +70,12 @@ const SignIn = () => {
               </div>
             </div>
 
-            <Button type="submit" className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]" size="lg">
-              Sign In to Manage Events
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]" 
+              size="lg"
+            >
+              Sign In to Book Events
             </Button>
 
             <div className="flex items-center justify-between">

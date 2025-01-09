@@ -39,7 +39,7 @@ const GetStarted = () => {
 
           <div className="space-y-4">
             <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-[#D946EF] to-[#F97316] text-transparent bg-clip-text">
-              MONATE CONNECT
+              M CONNECT
             </h1>
             <p className="text-white/80 text-xl">
               Your Premier Event Booking Platform

@@ -5,9 +5,11 @@ import { Search, Calendar, Ticket, MapPin, Users, ClipboardCheck, Building2, Che
 import ServiceCard from "@/components/ServiceCard";
 import BottomNav from "@/components/BottomNav";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   
   const services = [
     {
@@ -42,6 +44,14 @@ const Home = () => {
     }
   ];
 
+  const handleCreateEvent = () => {
+    toast({
+      title: "Not Registered as Event Organizer",
+      description: "Please scroll to the bottom of the page to request verification as an event organizer.",
+      variant: "destructive",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background pb-16">
       <div className="p-4 space-y-4">
@@ -69,8 +79,17 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2 mt-4">
-              <Button variant="secondary" size="sm" className="flex-1" onClick={() => navigate("/events")}>Browse Events</Button>
-              <Button variant="secondary" size="sm" className="flex-1">Create Event</Button>
+              <Button variant="secondary" size="sm" className="flex-1" onClick={() => navigate("/events")}>
+                Browse Events
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="sm" 
+                className="flex-1 opacity-50 cursor-not-allowed"
+                onClick={handleCreateEvent}
+              >
+                Create Event
+              </Button>
             </div>
           </div>
         </motion.div>

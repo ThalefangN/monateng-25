@@ -5,13 +5,17 @@ import { motion } from "framer-motion";
 import { Ticket, CreditCard, Check, Download, Search } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Tickets = () => {
   const [showPayment, setShowPayment] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [selectedTicket, setSelectedTicket] = useState<null | {
+    type: string;
+    price: string;
+    description: string;
+  }>(null);
   const { toast } = useToast();
-  const { eventId } = useParams();
   const navigate = useNavigate();
 
   const tickets = [
@@ -44,7 +48,6 @@ const Tickets = () => {
     toast({
       title: "Payment Successful! 🎉",
       description: "Your tickets have been booked. Check your email for confirmation.",
-      variant: "default",
     });
   };
 
@@ -52,7 +55,6 @@ const Tickets = () => {
     toast({
       title: "Ticket Downloaded",
       description: "Your digital ticket has been downloaded successfully.",
-      variant: "default",
     });
   };
 
@@ -92,7 +94,10 @@ const Tickets = () => {
                     <p className="text-muted-foreground">{ticket.description}</p>
                     <Button 
                       className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]"
-                      onClick={() => setShowPayment(true)}
+                      onClick={() => {
+                        setSelectedTicket(ticket);
+                        setShowPayment(true);
+                      }}
                     >
                       <Ticket className="mr-2 h-4 w-4" />
                       Select Ticket
@@ -135,6 +140,14 @@ const Tickets = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="max-w-md mx-auto space-y-8"
             >
+              {selectedTicket && (
+                <div className="bg-card p-6 rounded-xl space-y-4 border border-border">
+                  <h3 className="text-xl font-semibold">{selectedTicket.type} Ticket</h3>
+                  <p className="text-muted-foreground">{selectedTicket.description}</p>
+                  <p className="text-2xl font-bold text-primary">{selectedTicket.price}</p>
+                </div>
+              )}
+
               <div className="bg-gradient-to-r from-green-400 to-green-600 p-6 rounded-xl text-white space-y-4">
                 <CreditCard className="h-12 w-12" />
                 <div className="space-y-2">

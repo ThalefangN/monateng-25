@@ -14,6 +14,8 @@ import LiveBetting from "./pages/LiveBetting";
 import PopularMarkets from "./pages/PopularMarkets";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import OrganizerInfo from "./pages/OrganizerInfo";
+import OrganizerVerification from "./pages/OrganizerVerification";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient({
@@ -43,6 +45,8 @@ const App = () => {
             <Route path="/popular-markets" element={<PopularMarkets />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/organizer/info" element={<OrganizerInfo />} />
+            <Route path="/organizer/verify" element={<OrganizerVerification />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

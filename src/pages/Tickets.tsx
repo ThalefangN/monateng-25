@@ -2,13 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
-import { Ticket, CreditCard, Check } from "lucide-react";
+import { Ticket, CreditCard, Check, Download, Search } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Tickets = () => {
   const [showPayment, setShowPayment] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const { toast } = useToast();
+  const { eventId } = useParams();
+  const navigate = useNavigate();
 
   const tickets = [
     {
@@ -36,12 +40,20 @@ const Tickets = () => {
 
   const handlePayment = (e: React.FormEvent) => {
     e.preventDefault();
+    setShowSuccess(true);
     toast({
       title: "Payment Successful! 🎉",
       description: "Your tickets have been booked. Check your email for confirmation.",
       variant: "default",
     });
-    setShowPayment(false);
+  };
+
+  const handleDownloadTicket = () => {
+    toast({
+      title: "Ticket Downloaded",
+      description: "Your digital ticket has been downloaded successfully.",
+      variant: "default",
+    });
   };
 
   return (
@@ -54,31 +66,69 @@ const Tickets = () => {
         >
           <h1 className="text-3xl font-bold">Select Tickets</h1>
           
-          {!showPayment ? (
-            <div className="grid gap-6 md:grid-cols-2">
-              {tickets.map((ticket) => (
-                <motion.div
-                  key={ticket.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-card p-6 rounded-xl space-y-4"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-4xl">{ticket.icon}</span>
-                    <span className="text-2xl font-bold text-primary">{ticket.price}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold">{ticket.type}</h3>
-                  <p className="text-muted-foreground">{ticket.description}</p>
-                  <Button 
-                    className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]"
-                    onClick={() => setShowPayment(true)}
+          {!showPayment && !showSuccess ? (
+            <div className="space-y-6">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+                <Input 
+                  placeholder="Search events..." 
+                  className="pl-10"
+                />
+              </div>
+              
+              <div className="grid gap-6 md:grid-cols-2">
+                {tickets.map((ticket) => (
+                  <motion.div
+                    key={ticket.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-card p-6 rounded-xl space-y-4 border border-border"
                   >
-                    <Ticket className="mr-2 h-4 w-4" />
-                    Pay Now
-                  </Button>
-                </motion.div>
-              ))}
+                    <div className="flex items-center justify-between">
+                      <span className="text-4xl">{ticket.icon}</span>
+                      <span className="text-2xl font-bold text-primary">{ticket.price}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold">{ticket.type}</h3>
+                    <p className="text-muted-foreground">{ticket.description}</p>
+                    <Button 
+                      className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]"
+                      onClick={() => setShowPayment(true)}
+                    >
+                      <Ticket className="mr-2 h-4 w-4" />
+                      Select Ticket
+                    </Button>
+                  </motion.div>
+                ))}
+              </div>
             </div>
+          ) : showSuccess ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center space-y-6"
+            >
+              <div className="bg-green-500/10 p-8 rounded-xl">
+                <Check className="mx-auto h-16 w-16 text-green-500 mb-4" />
+                <h2 className="text-2xl font-bold mb-2">Payment Successful!</h2>
+                <p className="text-muted-foreground">Your ticket has been booked successfully.</p>
+              </div>
+              
+              <Button 
+                onClick={handleDownloadTicket}
+                className="bg-gradient-to-r from-[#D946EF] to-[#F97316]"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download Digital Ticket
+              </Button>
+              
+              <Button 
+                variant="outline"
+                onClick={() => navigate('/events')}
+                className="w-full"
+              >
+                Browse More Events
+              </Button>
+            </motion.div>
           ) : (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -114,7 +164,7 @@ const Tickets = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#D946EF] to-[#F97316]"
                 >
-                  Complete Payment
+                  Confirm Payment
                 </Button>
               </form>
             </motion.div>

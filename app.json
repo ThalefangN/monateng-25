@@ -1,0 +1,30 @@
+
+{
+  "expo": {
+    "name": "M CONNECT",
+    "slug": "m-connect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./public/favicon.ico",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./public/og-image.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mconnect.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./public/favicon.ico",
+        "backgroundColor": "#0f172a"
+      },
+      "package": "com.mconnect.app"
+    }
+  }
+}
